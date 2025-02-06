@@ -21,6 +21,13 @@ namespace Code.Infrastructure.Installers
       BindCurtain();
       BindInfrastructureServices();
       BindGameStateMachine();
+      BindContexts();
+    }
+
+    private void BindContexts()
+    {
+      Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
+      Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
     }
 
     private void BindInstaller()
