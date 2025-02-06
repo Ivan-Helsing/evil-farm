@@ -1,5 +1,6 @@
 ﻿using Code.Infrastructure.Services.Coroutines;
 using Code.Infrastructure.Services.Scenes;
+using Code.Infrastructure.Services.SystemFactory;
 using Code.Infrastructure.States;
 using Code.Infrastructure.UI.Loading;
 using Zenject;
@@ -44,6 +45,7 @@ namespace Code.Infrastructure.Installers
     private void BindInfrastructureServices()
     {
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+      Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
     }
 
     private void BindGameStateMachine()
