@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Input;
+using Code.Infrastructure.Entities.View;
 using Code.Infrastructure.Services.SystemFactory;
 
 namespace Code.Gameplay.Features
@@ -7,6 +8,8 @@ namespace Code.Gameplay.Features
   {
     public FarmFeature(ISystemFactory systems)
     {
+      Add(systems.Create<BindViewFeature>());
+      
       Add(systems.Create<InputFeature>());
     }
   }
