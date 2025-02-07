@@ -1,4 +1,4 @@
-namespace Code.Infrastructure.Entities.View
+namespace Code.Infrastructure.Entities.View.Registrars
 {
   public interface IEntityComponentRegistrar
   {

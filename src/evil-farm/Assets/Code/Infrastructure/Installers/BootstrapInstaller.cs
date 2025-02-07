@@ -1,5 +1,6 @@
 ﻿using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
+using Code.Infrastructure.Entities.View.Factory;
 using Code.Infrastructure.Services.AssetProviding;
 using Code.Infrastructure.Services.Coroutines;
 using Code.Infrastructure.Services.Scenes;
@@ -53,6 +54,9 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
       Container.Bind<IEcsFactory>().To<EcsFactory>().AsSingle();
       Container.BindInterfacesTo<EcsProvider>().AsSingle();
+      
+      Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      
     }
 
     private void BindGameStateMachine()
