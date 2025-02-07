@@ -8,12 +8,13 @@ namespace Code.Infrastructure.States
   {
     private readonly IGameStateMachine _stateMachine;
     private readonly ILoadingCurtain _curtain;
-    private IEcsProvider _ecsRunner;
+    private readonly IEcsBinder _ecsRunner;
 
-    public LoadLevelState(IGameStateMachine stateMachine, ILoadingCurtain curtain)
+    public LoadLevelState(IGameStateMachine stateMachine, ILoadingCurtain curtain, IEcsBinder ecsRunner)
     {
       _stateMachine = stateMachine;
       _curtain = curtain;
+      _ecsRunner = ecsRunner;
     }
     
     public void Enter()

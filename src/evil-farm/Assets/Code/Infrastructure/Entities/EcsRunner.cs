@@ -3,7 +3,7 @@ using Code.Infrastructure.Services.SystemFactory;
 using UnityEngine;
 using Zenject;
 
-namespace Code.Gameplay
+namespace Code.Infrastructure.Entities
 {
   public class EcsRunner : MonoBehaviour
   {

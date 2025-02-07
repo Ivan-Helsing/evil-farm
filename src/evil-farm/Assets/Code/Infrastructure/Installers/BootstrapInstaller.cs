@@ -1,4 +1,7 @@
-﻿using Code.Infrastructure.Services.Coroutines;
+﻿using Code.Infrastructure.Entities.Factory;
+using Code.Infrastructure.Entities.Services;
+using Code.Infrastructure.Services.AssetProviding;
+using Code.Infrastructure.Services.Coroutines;
 using Code.Infrastructure.Services.Scenes;
 using Code.Infrastructure.Services.SystemFactory;
 using Code.Infrastructure.States;
@@ -44,8 +47,12 @@ namespace Code.Infrastructure.Installers
 
     private void BindInfrastructureServices()
     {
+      Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+      
       Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
+      Container.Bind<IEcsFactory>().To<EcsFactory>().AsSingle();
+      Container.BindInterfacesTo<EcsProvider>().AsSingle();
     }
 
     private void BindGameStateMachine()
