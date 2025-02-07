@@ -8,15 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Input = 0;
+    public const int SelfDestructTimer = 0;
+    public const int View = 1;
+    public const int ViewPath = 2;
+    public const int ViewPrefab = 3;
+    public const int Input = 4;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
+        "SelfDestructTimer",
+        "View",
+        "ViewPath",
+        "ViewPrefab",
         "Input"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.SelfDestructTimer),
+        typeof(Code.Common.View),
+        typeof(Code.Common.ViewPath),
+        typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Features.Input.Input)
     };
 }
