@@ -1,5 +1,5 @@
 {
-    "name": "InputSystem_Actions",
+    "name": "FarmInput",
     "maps": [
         {
             "name": "Player",
@@ -57,6 +57,39 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "22c8fede-1534-4a8d-a440-c4974974d244",
+                    "path": "OneModifier",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "d529e4b3-ec7d-4a15-8bd9-47cc924d845c",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "587de93c-3eae-4daa-afca-fc2c2e2f1345",
+                    "path": "<Pointer>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
