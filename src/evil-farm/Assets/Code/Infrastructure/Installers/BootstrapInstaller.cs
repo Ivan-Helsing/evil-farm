@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Services.Time;
+﻿using Code.Gameplay.Common.Services.Identifier;
+using Code.Gameplay.Common.Services.Time;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
@@ -35,6 +36,7 @@ namespace Code.Infrastructure.Installers
 
     private void BindCommonServices()
     {
+      Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
       Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
     }
 

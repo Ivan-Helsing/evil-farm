@@ -10,10 +10,7 @@ namespace Code.Gameplay.Features.Input.Systems
     public InitializeInputSystem(IInputFactory factory) => 
       _factory = factory;
 
-    public void Initialize()
-    {
-      GameEntity input = _factory.CreateInputProvider();
-      
-    }
+    public void Initialize() => 
+      _factory.CreateInputProvider();
   }
 }
