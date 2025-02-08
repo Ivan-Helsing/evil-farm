@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Input.Factory;
+﻿using Code.Gameplay.Common.Services.Time;
+using Code.Gameplay.Features.Input.Factory;
 using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
@@ -28,7 +29,13 @@ namespace Code.Infrastructure.Installers
       BindInfrastructureServices();
       BindGameStateMachine();
       BindContexts();
+      BindCommonServices();
       BindGameplayServises();
+    }
+
+    private void BindCommonServices()
+    {
+      Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
     }
 
     private void BindGameplayServises()

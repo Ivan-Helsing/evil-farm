@@ -8,18 +8,20 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int SelfDestructTimer = 0;
-    public const int View = 1;
-    public const int ViewPath = 2;
-    public const int ViewPrefab = 3;
-    public const int Id = 4;
-    public const int Transform = 5;
-    public const int WorldPosition = 6;
-    public const int Input = 7;
+    public const int Destructed = 0;
+    public const int SelfDestructTimer = 1;
+    public const int View = 2;
+    public const int ViewPath = 3;
+    public const int ViewPrefab = 4;
+    public const int Id = 5;
+    public const int Transform = 6;
+    public const int WorldPosition = 7;
+    public const int Input = 8;
 
-    public const int TotalComponents = 8;
+    public const int TotalComponents = 9;
 
     public static readonly string[] componentNames = {
+        "Destructed",
         "SelfDestructTimer",
         "View",
         "ViewPath",
@@ -31,6 +33,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.Destructed),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPath),
