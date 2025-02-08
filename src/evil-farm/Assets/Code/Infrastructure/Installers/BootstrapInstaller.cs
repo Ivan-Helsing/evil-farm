@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Services.Identifier;
+using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Common.Services.Time;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
@@ -39,6 +40,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
       Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+      Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
     }
 
     private void BindGameplayServises()

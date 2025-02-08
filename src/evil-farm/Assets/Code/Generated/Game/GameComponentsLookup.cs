@@ -14,11 +14,17 @@ public static class GameComponentsLookup {
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
     public const int Id = 5;
-    public const int Transform = 6;
-    public const int WorldPosition = 7;
-    public const int Input = 8;
+    public const int OwnerId = 6;
+    public const int Transform = 7;
+    public const int WorldPosition = 8;
+    public const int CursorPosition = 9;
+    public const int Input = 10;
+    public const int Interacted = 11;
+    public const int ReadyToCleanup = 12;
+    public const int WalkablePoint = 13;
+    public const int WalkingProvided = 14;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -27,9 +33,15 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Id",
+        "OwnerId",
         "Transform",
         "WorldPosition",
-        "Input"
+        "CursorPosition",
+        "Input",
+        "Interacted",
+        "ReadyToCleanup",
+        "WalkablePoint",
+        "WalkingProvided"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -39,8 +51,14 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.OwnerId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Code.Gameplay.Features.Input.Input)
+        typeof(Code.Gameplay.Features.Input.CursorPosition),
+        typeof(Code.Gameplay.Features.Input.Input),
+        typeof(Code.Gameplay.Features.Input.Interacted),
+        typeof(Code.Gameplay.Features.Input.ReadyToCleanup),
+        typeof(Code.Gameplay.Features.Input.WalkablePoint),
+        typeof(Code.Gameplay.Features.Input.WalkingProvided)
     };
 }
