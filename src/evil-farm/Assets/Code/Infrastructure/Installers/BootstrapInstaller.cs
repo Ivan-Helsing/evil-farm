@@ -1,5 +1,8 @@
-﻿using Code.Gameplay.Common.Services.Time;
+﻿using Code.Gameplay.Common.Services.Identifier;
+using Code.Gameplay.Common.Services.Physics;
+using Code.Gameplay.Common.Services.Time;
 using Code.Gameplay.Features.Input.Factory;
+using Code.Gameplay.Features.Input.Service;
 using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
@@ -35,11 +38,14 @@ namespace Code.Infrastructure.Installers
 
     private void BindCommonServices()
     {
+      Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
       Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+      Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
     }
 
     private void BindGameplayServises()
     {
+      Container.BindInterfacesTo<InputService>().AsSingle();
       Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
     }
 
