@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.Entities.Factory;
+﻿using Code.Gameplay.Features.Input.Factory;
+using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
 using Code.Infrastructure.Services.AssetProviding;
@@ -27,6 +28,12 @@ namespace Code.Infrastructure.Installers
       BindInfrastructureServices();
       BindGameStateMachine();
       BindContexts();
+      BindGameplayServises();
+    }
+
+    private void BindGameplayServises()
+    {
+      Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
     }
 
     private void BindContexts()
