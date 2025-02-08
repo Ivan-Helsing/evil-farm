@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Farmer.Systems;
 using Code.Gameplay.Features.Input;
 using Code.Infrastructure.Entities.View;
 using Code.Infrastructure.Services.SystemFactory;
@@ -12,6 +13,7 @@ namespace Code.Gameplay.Features
       Add(systems.Create<BindViewFeature>());
       
       Add(systems.Create<InputFeature>());
+      Add(systems.Create<FarmerFeature>());
       
       
       

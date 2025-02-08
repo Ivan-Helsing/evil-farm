@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Common.Services.Identifier;
 using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Common.Services.Time;
+using Code.Gameplay.Features.Farmer.Factory;
+using Code.Gameplay.Features.Farmer.Provider;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
 using Code.Infrastructure.Entities.Factory;
@@ -45,8 +47,11 @@ namespace Code.Infrastructure.Installers
 
     private void BindGameplayServises()
     {
-      Container.BindInterfacesTo<InputService>().AsSingle();
       Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
+      Container.BindInterfacesTo<InputService>().AsSingle();
+
+      Container.Bind<IFarmerFactory>().To<FarmerFactory>().AsSingle();
+      Container.BindInterfacesTo<FarmerProvider>().AsSingle();
     }
 
     private void BindContexts()

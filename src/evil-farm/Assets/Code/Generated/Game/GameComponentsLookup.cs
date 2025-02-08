@@ -17,14 +17,15 @@ public static class GameComponentsLookup {
     public const int OwnerId = 6;
     public const int Transform = 7;
     public const int WorldPosition = 8;
-    public const int CursorPosition = 9;
-    public const int Input = 10;
-    public const int Interacted = 11;
-    public const int ReadyToCleanup = 12;
-    public const int WalkablePoint = 13;
-    public const int WalkingProvided = 14;
+    public const int Farmer = 9;
+    public const int CursorPosition = 10;
+    public const int Input = 11;
+    public const int Interacted = 12;
+    public const int ReadyToCleanup = 13;
+    public const int WalkablePoint = 14;
+    public const int WalkingProvided = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -36,6 +37,7 @@ public static class GameComponentsLookup {
         "OwnerId",
         "Transform",
         "WorldPosition",
+        "Farmer",
         "CursorPosition",
         "Input",
         "Interacted",
@@ -54,6 +56,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.OwnerId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Farmer.Farmer),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.Interacted),
