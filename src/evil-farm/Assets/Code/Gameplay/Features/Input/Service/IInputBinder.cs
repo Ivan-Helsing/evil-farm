@@ -2,7 +2,7 @@
 {
   public interface IInputBinder
   {
-    void SetupInputEntity(GameEntity entity);
-    void CleanupInputEntity(GameEntity entity);
+    void Setup(int ownerId);
+    void Cleanup(GameEntity entity);
   }
 }

@@ -10,12 +10,10 @@ namespace Code.Gameplay.Features.Farmer.Factory
   {
     private readonly IIdentifierService _identifiers;
 
-    public FarmerFactory(IIdentifierService identifiers)
-    {
+    public FarmerFactory(IIdentifierService identifiers) => 
       _identifiers = identifiers;
-    }
 
-    public GameEntity CreateFarmer(Vector3 initialPoint)
+    public GameEntity Create(Vector3 initialPoint)
     {
       return CreateEntity.Empty()
           .AddId(_identifiers.NextId())

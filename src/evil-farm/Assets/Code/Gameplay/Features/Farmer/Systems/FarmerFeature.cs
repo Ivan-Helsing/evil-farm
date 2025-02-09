@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Farmer.Systems
   {
     public FarmerFeature(ISystemFactory systems)
     {
-      Add(systems.Create<InitializeFarmerSystem>());
+      
     }
   }
 }

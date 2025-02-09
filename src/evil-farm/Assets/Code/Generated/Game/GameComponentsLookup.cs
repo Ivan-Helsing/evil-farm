@@ -17,15 +17,19 @@ public static class GameComponentsLookup {
     public const int OwnerId = 6;
     public const int Transform = 7;
     public const int WorldPosition = 8;
-    public const int Farmer = 9;
-    public const int CursorPosition = 10;
-    public const int Input = 11;
-    public const int Interacted = 12;
-    public const int ReadyToCleanup = 13;
-    public const int WalkablePoint = 14;
-    public const int WalkingProvided = 15;
+    public const int AngleX = 9;
+    public const int Distance = 10;
+    public const int MainCamera = 11;
+    public const int Offset = 12;
+    public const int Farmer = 13;
+    public const int CursorPosition = 14;
+    public const int Input = 15;
+    public const int Interacted = 16;
+    public const int ReadyToCleanup = 17;
+    public const int WalkablePoint = 18;
+    public const int WalkingProvided = 19;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -37,6 +41,10 @@ public static class GameComponentsLookup {
         "OwnerId",
         "Transform",
         "WorldPosition",
+        "AngleX",
+        "Distance",
+        "MainCamera",
+        "Offset",
         "Farmer",
         "CursorPosition",
         "Input",
@@ -56,6 +64,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.OwnerId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Cameras.AngleX),
+        typeof(Code.Gameplay.Features.Cameras.Distance),
+        typeof(Code.Gameplay.Features.Cameras.MainCamera),
+        typeof(Code.Gameplay.Features.Cameras.Offset),
         typeof(Code.Gameplay.Features.Farmer.Farmer),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.Input),

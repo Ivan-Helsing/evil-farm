@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Common.Services.Identifier;
 using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Common.Services.Time;
+using Code.Gameplay.Features.Cameras.Factory;
+using Code.Gameplay.Features.Cameras.Provider;
 using Code.Gameplay.Features.Farmer.Factory;
 using Code.Gameplay.Features.Farmer.Provider;
 using Code.Gameplay.Features.Input.Factory;
@@ -53,6 +55,9 @@ namespace Code.Infrastructure.Installers
 
       Container.Bind<IFarmerFactory>().To<FarmerFactory>().AsSingle();
       Container.BindInterfacesTo<FarmerProvider>().AsSingle();
+      
+      Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
+      Container.BindInterfacesTo<CameraProvider>().AsSingle();
     }
 
     private void BindContexts()
