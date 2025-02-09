@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Cameras;
 using Code.Gameplay.Features.Farmer.Systems;
 using Code.Gameplay.Features.Input;
 using Code.Infrastructure.Entities.View;
@@ -14,6 +15,7 @@ namespace Code.Gameplay.Features
       
       Add(systems.Create<InputFeature>());
       Add(systems.Create<FarmerFeature>());
+      Add(systems.Create<CameraFeature>());
       
       
       

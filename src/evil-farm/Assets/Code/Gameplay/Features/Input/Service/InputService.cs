@@ -1,14 +1,24 @@
-﻿namespace Code.Gameplay.Features.Input.Service
+﻿using Code.Gameplay.Features.Input.Factory;
+
+namespace Code.Gameplay.Features.Input.Service
 {
   public class InputService : IInputService, IInputBinder
   {
-    private GameEntity _entity;
-    public GameEntity Entity => _entity;
+    private GameEntity _input;
+    public GameEntity Entity => _input;
 
-    public void SetupInputEntity(GameEntity entity) =>
-      _entity = entity;
+    private readonly IInputFactory _factory;
 
-    public void CleanupInputEntity(GameEntity entity) =>
-      _entity = null;
+    public InputService(IInputFactory factory) => 
+      _factory = factory;
+
+    public void Setup(int ownerId)
+    {
+      _input = _factory.CreateInput();
+      _input.AddOwnerId(ownerId);
+    }
+
+    public void Cleanup(GameEntity entity) =>
+      _input = null;
   }
 }

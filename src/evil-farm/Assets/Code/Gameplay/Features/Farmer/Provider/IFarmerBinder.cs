@@ -2,7 +2,7 @@
 {
   public interface IFarmerBinder
   {
-    void BindFarmerEntity(GameEntity farmer);
-    void CleanupFarmerEntity();
+    GameEntity Setup();
+    void Cleanup();
   }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Code.Infrastructure.Entities.View.Registrars;
+using UnityEngine;
 
 namespace Code.Infrastructure.Entities.View
 {
@@ -12,10 +13,16 @@ namespace Code.Infrastructure.Entities.View
       _entity = entity;
       _entity.AddView(this);
       _entity.Retain(this);
+
+      foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
+        registrar.RegisterComponents();
     }
 
     public void ReleaseEntity()
     {
+      foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
+        registrar.UnregisterComponents();
+      
       _entity.Release(this);
       _entity = null;
     }

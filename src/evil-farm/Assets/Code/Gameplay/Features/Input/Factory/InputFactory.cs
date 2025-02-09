@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Input.Factory
     public InputFactory(IIdentifierService identifiers) => 
       _identifiers = identifiers;
 
-    public GameEntity CreateInputProvider()
+    public GameEntity CreateInput()
     {
       return CreateEntity.Empty()
         .AddId(_identifiers.NextId())

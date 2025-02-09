@@ -2,6 +2,6 @@
 {
   public interface IInputFactory
   {
-    GameEntity CreateInputProvider();
+    GameEntity CreateInput();
   }
 }
