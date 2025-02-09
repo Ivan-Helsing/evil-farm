@@ -10,6 +10,7 @@ using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
 using Code.Infrastructure.Services.AssetProviding;
 using Code.Infrastructure.Services.Coroutines;
+using Code.Infrastructure.Services.Levels;
 using Code.Infrastructure.Services.Scenes;
 using Code.Infrastructure.Services.SystemFactory;
 using Code.Infrastructure.States;
@@ -81,6 +82,7 @@ namespace Code.Infrastructure.Installers
       Container.BindInterfacesTo<EcsProvider>().AsSingle();
       
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      Container.BindInterfacesTo<LevelDataProvider>().AsSingle();
       
     }
 

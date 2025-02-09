@@ -1,7 +1,9 @@
-﻿namespace Code.Gameplay.Features.Farmer.Factory
+﻿using UnityEngine;
+
+namespace Code.Gameplay.Features.Farmer.Factory
 {
   public interface IFarmerFactory
   {
-    GameEntity CreateFarmer();
+    GameEntity CreateFarmer(Vector3 initialPoint);
   }
 }

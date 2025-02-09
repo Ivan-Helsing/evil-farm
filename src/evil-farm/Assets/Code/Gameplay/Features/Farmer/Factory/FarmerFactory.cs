@@ -15,12 +15,12 @@ namespace Code.Gameplay.Features.Farmer.Factory
       _identifiers = identifiers;
     }
 
-    public GameEntity CreateFarmer()
+    public GameEntity CreateFarmer(Vector3 initialPoint)
     {
       return CreateEntity.Empty()
           .AddId(_identifiers.NextId())
           .AddViewPath(AssetPath.Farmer)
-          .AddWorldPosition(Vector3.zero)
+          .AddWorldPosition(initialPoint)
           
           .With(x => x.isFarmer = true)
         ;
