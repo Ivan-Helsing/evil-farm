@@ -1,5 +1,4 @@
 using Code.Infrastructure.UI.Loading;
-using UnityEngine;
 
 namespace Code.Infrastructure.States
 {
@@ -19,7 +18,6 @@ namespace Code.Infrastructure.States
       _curtain.Hide();
 
       _stateMachine.Enter<GameLoopState>();
-      Debug.Log("LoadLevel Entered");
     }
 
     public void Exit()
