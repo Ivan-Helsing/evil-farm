@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Common.Services.Identifier;
 using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Common.Services.Time;
+using Code.Gameplay.Features.Farmer.Factory;
+using Code.Gameplay.Features.Farmer.Provider;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
 using Code.Infrastructure.Entities.Factory;
@@ -8,6 +10,7 @@ using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
 using Code.Infrastructure.Services.AssetProviding;
 using Code.Infrastructure.Services.Coroutines;
+using Code.Infrastructure.Services.Levels;
 using Code.Infrastructure.Services.Scenes;
 using Code.Infrastructure.Services.SystemFactory;
 using Code.Infrastructure.States;
@@ -45,8 +48,11 @@ namespace Code.Infrastructure.Installers
 
     private void BindGameplayServises()
     {
-      Container.BindInterfacesTo<InputService>().AsSingle();
       Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
+      Container.BindInterfacesTo<InputService>().AsSingle();
+
+      Container.Bind<IFarmerFactory>().To<FarmerFactory>().AsSingle();
+      Container.BindInterfacesTo<FarmerProvider>().AsSingle();
     }
 
     private void BindContexts()
@@ -76,6 +82,7 @@ namespace Code.Infrastructure.Installers
       Container.BindInterfacesTo<EcsProvider>().AsSingle();
       
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
+      Container.BindInterfacesTo<LevelDataProvider>().AsSingle();
       
     }
 
