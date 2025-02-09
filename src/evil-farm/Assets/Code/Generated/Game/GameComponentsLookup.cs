@@ -17,19 +17,26 @@ public static class GameComponentsLookup {
     public const int OwnerId = 6;
     public const int Transform = 7;
     public const int WorldPosition = 8;
-    public const int AngleX = 9;
-    public const int Distance = 10;
-    public const int MainCamera = 11;
-    public const int Offset = 12;
+    public const int Distance = 9;
+    public const int MainCamera = 10;
+    public const int Offset = 11;
+    public const int RotationAngleX = 12;
     public const int Farmer = 13;
     public const int CursorPosition = 14;
-    public const int Input = 15;
-    public const int Interacted = 16;
-    public const int ReadyToCleanup = 17;
-    public const int WalkablePoint = 18;
-    public const int WalkingProvided = 19;
+    public const int DestinationGranted = 15;
+    public const int DestinationPoint = 16;
+    public const int Input = 17;
+    public const int Interacted = 18;
+    public const int ReadyToCleanup = 19;
+    public const int WalkablePoint = 20;
+    public const int WalkingProvided = 21;
+    public const int CharacterMover = 22;
+    public const int Direction = 23;
+    public const int MovementAvailable = 24;
+    public const int Moving = 25;
+    public const int Speed = 26;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -41,17 +48,24 @@ public static class GameComponentsLookup {
         "OwnerId",
         "Transform",
         "WorldPosition",
-        "AngleX",
         "Distance",
         "MainCamera",
         "Offset",
+        "RotationAngleX",
         "Farmer",
         "CursorPosition",
+        "DestinationGranted",
+        "DestinationPoint",
         "Input",
         "Interacted",
         "ReadyToCleanup",
         "WalkablePoint",
-        "WalkingProvided"
+        "WalkingProvided",
+        "CharacterMover",
+        "Direction",
+        "MovementAvailable",
+        "Moving",
+        "Speed"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -64,16 +78,23 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.OwnerId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Code.Gameplay.Features.Cameras.AngleX),
         typeof(Code.Gameplay.Features.Cameras.Distance),
         typeof(Code.Gameplay.Features.Cameras.MainCamera),
         typeof(Code.Gameplay.Features.Cameras.Offset),
+        typeof(Code.Gameplay.Features.Cameras.RotationAngleX),
         typeof(Code.Gameplay.Features.Farmer.Farmer),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
+        typeof(Code.Gameplay.Features.Input.DestinationGranted),
+        typeof(Code.Gameplay.Features.Input.DestinationPoint),
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.Interacted),
         typeof(Code.Gameplay.Features.Input.ReadyToCleanup),
         typeof(Code.Gameplay.Features.Input.WalkablePoint),
-        typeof(Code.Gameplay.Features.Input.WalkingProvided)
+        typeof(Code.Gameplay.Features.Input.WalkingProvided),
+        typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.Speed)
     };
 }

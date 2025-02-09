@@ -27,6 +27,9 @@ namespace Code.Gameplay.Features.Input.Behaviours
 
     public void OnMove(InputValue value) =>
       _input.Entity.isWalkingProvided = true;
+    
+    public void OnGrantDestination(InputValue value) => 
+      _input.Entity.isDestinationGranted = true;
 
     public void OnInteract(InputValue value) =>
       _input.Entity.isInteracted = true;

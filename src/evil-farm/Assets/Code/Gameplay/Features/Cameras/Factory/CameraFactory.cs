@@ -22,8 +22,8 @@ namespace Code.Gameplay.Features.Cameras.Factory
           .AddWorldPosition(Vector3.zero)
           
           .AddDistance(6f)
-          .AddOffset(-4f)
-          .AddAngleX(55)
+          .AddOffset(0.5f)
+          .AddRotationAngleX(55)
           
         ;
     }

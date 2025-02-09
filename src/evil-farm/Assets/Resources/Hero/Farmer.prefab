@@ -4669,8 +4669,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6157569679675059110}
   - component: {fileID: 5937467155964460007}
+  - component: {fileID: -1196170172684932239}
+  - component: {fileID: -1660933443514438567}
   - component: {fileID: -1209121315022254438}
   - component: {fileID: -5419422188793823874}
+  - component: {fileID: -8553191221096814499}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: Untagged
@@ -4718,6 +4721,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!143 &-1196170172684932239
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772264505136217308}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-1660933443514438567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772264505136217308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a6f6a8ade44af28715a40059325bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: -1196170172684932239}
 --- !u!114 &-1209121315022254438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4743,6 +4784,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: -1209121315022254438}
+--- !u!114 &-8553191221096814499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772264505136217308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1387676c8ee5477b8808d67619625c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: -1209121315022254438}
+  Mover: {fileID: -1660933443514438567}
 --- !u!1 &7779247227886068136
 GameObject:
   m_ObjectHideFlags: 0

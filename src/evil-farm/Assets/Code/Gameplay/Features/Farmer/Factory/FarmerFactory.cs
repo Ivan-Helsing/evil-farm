@@ -20,7 +20,10 @@ namespace Code.Gameplay.Features.Farmer.Factory
           .AddViewPath(AssetPath.Farmer)
           .AddWorldPosition(initialPoint)
           
+          .AddSpeed(5)
+          
           .With(x => x.isFarmer = true)
+          .With(x => x.isMovementAvailable = true)
         ;
     }
   }

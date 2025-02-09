@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherAngleX;
+    static Entitas.IMatcher<GameEntity> _matcherSpeed;
 
-    public static Entitas.IMatcher<GameEntity> AngleX {
+    public static Entitas.IMatcher<GameEntity> Speed {
         get {
-            if (_matcherAngleX == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.AngleX);
+            if (_matcherSpeed == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Speed);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherAngleX = matcher;
+                _matcherSpeed = matcher;
             }
 
-            return _matcherAngleX;
+            return _matcherSpeed;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Cameras.AngleX angleX { get { return (Code.Gameplay.Features.Cameras.AngleX)GetComponent(GameComponentsLookup.AngleX); } }
-    public float AngleX { get { return angleX.Value; } }
-    public bool hasAngleX { get { return HasComponent(GameComponentsLookup.AngleX); } }
+    public Code.Gameplay.Features.Movement.Speed speed { get { return (Code.Gameplay.Features.Movement.Speed)GetComponent(GameComponentsLookup.Speed); } }
+    public float Speed { get { return speed.Value; } }
+    public bool hasSpeed { get { return HasComponent(GameComponentsLookup.Speed); } }
 
-    public GameEntity AddAngleX(float newValue) {
-        var index = GameComponentsLookup.AngleX;
-        var component = (Code.Gameplay.Features.Cameras.AngleX)CreateComponent(index, typeof(Code.Gameplay.Features.Cameras.AngleX));
+    public GameEntity AddSpeed(float newValue) {
+        var index = GameComponentsLookup.Speed;
+        var component = (Code.Gameplay.Features.Movement.Speed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Speed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAngleX(float newValue) {
-        var index = GameComponentsLookup.AngleX;
-        var component = (Code.Gameplay.Features.Cameras.AngleX)CreateComponent(index, typeof(Code.Gameplay.Features.Cameras.AngleX));
+    public GameEntity ReplaceSpeed(float newValue) {
+        var index = GameComponentsLookup.Speed;
+        var component = (Code.Gameplay.Features.Movement.Speed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Speed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveAngleX() {
-        RemoveComponent(GameComponentsLookup.AngleX);
+    public GameEntity RemoveSpeed() {
+        RemoveComponent(GameComponentsLookup.Speed);
         return this;
     }
 }
