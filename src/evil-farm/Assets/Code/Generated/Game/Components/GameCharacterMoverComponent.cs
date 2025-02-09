@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Movement.CharacterMoverComponent characterMover { get { return (Code.Gameplay.Features.Movement.CharacterMoverComponent)GetComponent(GameComponentsLookup.CharacterMover); } }
-    public Code.Gameplay.Features.Movement.Behaviours.CharacterMover CharacterMover { get { return characterMover.Value; } }
+    public Code.Gameplay.Features.Movement.Behaviours.ICharacterMover CharacterMover { get { return characterMover.Value; } }
     public bool hasCharacterMover { get { return HasComponent(GameComponentsLookup.CharacterMover); } }
 
-    public GameEntity AddCharacterMover(Code.Gameplay.Features.Movement.Behaviours.CharacterMover newValue) {
+    public GameEntity AddCharacterMover(Code.Gameplay.Features.Movement.Behaviours.ICharacterMover newValue) {
         var index = GameComponentsLookup.CharacterMover;
         var component = (Code.Gameplay.Features.Movement.CharacterMoverComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceCharacterMover(Code.Gameplay.Features.Movement.Behaviours.CharacterMover newValue) {
+    public GameEntity ReplaceCharacterMover(Code.Gameplay.Features.Movement.Behaviours.ICharacterMover newValue) {
         var index = GameComponentsLookup.CharacterMover;
         var component = (Code.Gameplay.Features.Movement.CharacterMoverComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent));
         component.Value = newValue;

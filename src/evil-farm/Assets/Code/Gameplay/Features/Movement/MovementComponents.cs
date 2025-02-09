@@ -10,5 +10,5 @@ namespace Code.Gameplay.Features.Movement
   [Game] public class Speed : IComponent { public float Value; }
   [Game] public class Direction : IComponent { public Vector3 Value; }
   
-  [Game] public class CharacterMoverComponent : IComponent { public CharacterMover Value; }
+  [Game] public class CharacterMoverComponent : IComponent { public ICharacterMover Value; }
 }

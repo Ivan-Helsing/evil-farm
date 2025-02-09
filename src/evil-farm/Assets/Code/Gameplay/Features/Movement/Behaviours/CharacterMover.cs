@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Code.Gameplay.Features.Movement.Behaviours
 {
-  public class CharacterMover : MonoBehaviour
+  public class CharacterMover : MonoBehaviour, ICharacterMover
   {
     [SerializeField] private CharacterController _controller;
     private IPhysicsService _physics;
