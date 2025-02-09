@@ -17,7 +17,9 @@ namespace Code.Gameplay.Features.Input.Systems
         .AllOf(
           GameMatcher.Input,
           GameMatcher.OwnerId,
-          GameMatcher.CursorPosition));
+          GameMatcher.WalkingProvided,
+          GameMatcher.CursorPosition)
+        .NoneOf(GameMatcher.DestinationGranted));
     }
 
     public void Execute()
@@ -28,8 +30,9 @@ namespace Code.Gameplay.Features.Input.Systems
         
         farmer.ReplaceDirection(_screen.BindZeroToCenter(input.CursorPosition));
         farmer.isMoving = true;
-        
-        
+
+        if (farmer.hasDestinationPoint)
+          farmer.RemoveDestinationPoint();
       }
     }
   }

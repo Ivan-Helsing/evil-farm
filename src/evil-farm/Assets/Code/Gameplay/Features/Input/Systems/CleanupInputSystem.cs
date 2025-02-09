@@ -19,9 +19,10 @@ namespace Code.Gameplay.Features.Input.Systems
     {
       foreach (GameEntity input in _inputs.GetEntities(_buffer))
       {
-        input.isWalkingProvided = false;
         input.isInteracted = false;
-        
+        input.isWalkingProvided = false;
+        input.isDestinationGranted = false;
+
         input.isReadyToCleanup = false;
       }
     }

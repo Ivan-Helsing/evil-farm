@@ -13,6 +13,7 @@ namespace Code.Gameplay.Common.Services.Physics
       Ray ray = with.ScreenPointToRay(from);
       if (UnityEngine.Physics.Raycast(ray, out RaycastHit hit, distance, layer.AsLayer()))
       {
+        Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
         return hit.point;
       }
       return Vector3.zero;

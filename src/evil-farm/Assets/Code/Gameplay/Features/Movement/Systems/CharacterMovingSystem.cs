@@ -24,8 +24,6 @@ namespace Code.Gameplay.Features.Movement.Systems
       foreach (GameEntity character in _characters.GetEntities(_buffer))
       {
         character.CharacterMover.Move(character.Direction, character.Speed);
-
-        character.isMoving = false;
       }
     }
   }

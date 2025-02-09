@@ -1,6 +1,6 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Cameras;
-using Code.Gameplay.Features.Farmer.Systems;
+using Code.Gameplay.Features.Farmer;
 using Code.Gameplay.Features.Input;
 using Code.Gameplay.Features.Movement;
 using Code.Infrastructure.Entities.View;
