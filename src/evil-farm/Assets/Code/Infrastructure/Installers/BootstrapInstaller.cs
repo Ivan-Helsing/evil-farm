@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Common.Services.Identifier;
 using Code.Gameplay.Common.Services.Physics;
+using Code.Gameplay.Common.Services.Screens;
 using Code.Gameplay.Common.Services.Time;
 using Code.Gameplay.Features.Cameras.Factory;
 using Code.Gameplay.Features.Cameras.Provider;
@@ -46,6 +47,7 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
       Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
       Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+      Container.Bind<IScreenService>().To<ScreenService>().AsSingle();
     }
 
     private void BindGameplayServises()

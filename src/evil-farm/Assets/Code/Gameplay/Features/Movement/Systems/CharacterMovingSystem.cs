@@ -1,10 +1,12 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
   public class CharacterMovingSystem : IExecuteSystem
   {
     private readonly IGroup<GameEntity> _characters;
+    private readonly List<GameEntity> _buffer = new (8);
 
     public CharacterMovingSystem(GameContext game)
     {
@@ -19,9 +21,11 @@ namespace Code.Gameplay.Features.Movement.Systems
 
     public void Execute()
     {
-      foreach (GameEntity character in _characters)
+      foreach (GameEntity character in _characters.GetEntities(_buffer))
       {
         character.CharacterMover.Move(character.Direction, character.Speed);
+
+        character.isMoving = false;
       }
     }
   }

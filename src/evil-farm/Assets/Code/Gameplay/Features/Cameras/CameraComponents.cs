@@ -7,5 +7,5 @@ namespace Code.Gameplay.Features.Cameras
   
   [Game] public class Distance : IComponent { public float Value; }
   [Game] public class Offset : IComponent { public float Value; }
-  [Game] public class AngleX : IComponent { public float Value; }
+  [Game] public class RotationAngleX : IComponent { public float Value; }
 }

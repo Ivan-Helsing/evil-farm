@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Input
   {
     public InputFeature(ISystemFactory systems)
     {
+      Add(systems.Create<InputMovingDirectionProvidingSystem>());
       Add(systems.Create<InputInteractionProvidingSystem>());
 
       Add(systems.Create<CleanupInputSystem>());
