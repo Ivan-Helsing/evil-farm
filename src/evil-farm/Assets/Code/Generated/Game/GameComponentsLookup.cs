@@ -28,8 +28,13 @@ public static class GameComponentsLookup {
     public const int ReadyToCleanup = 17;
     public const int WalkablePoint = 18;
     public const int WalkingProvided = 19;
+    public const int CharacterMover = 20;
+    public const int Direction = 21;
+    public const int MovementAvailable = 22;
+    public const int Moving = 23;
+    public const int Speed = 24;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -51,7 +56,12 @@ public static class GameComponentsLookup {
         "Interacted",
         "ReadyToCleanup",
         "WalkablePoint",
-        "WalkingProvided"
+        "WalkingProvided",
+        "CharacterMover",
+        "Direction",
+        "MovementAvailable",
+        "Moving",
+        "Speed"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -74,6 +84,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.Interacted),
         typeof(Code.Gameplay.Features.Input.ReadyToCleanup),
         typeof(Code.Gameplay.Features.Input.WalkablePoint),
-        typeof(Code.Gameplay.Features.Input.WalkingProvided)
+        typeof(Code.Gameplay.Features.Input.WalkingProvided),
+        typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.Speed)
     };
 }
