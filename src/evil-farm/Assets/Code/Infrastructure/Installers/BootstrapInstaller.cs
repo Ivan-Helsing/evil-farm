@@ -8,6 +8,7 @@ using Code.Gameplay.Features.Farmer.Factory;
 using Code.Gameplay.Features.Farmer.Provider;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
+using Code.Gameplay.Features.Plots.Factory;
 using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
@@ -60,6 +61,9 @@ namespace Code.Infrastructure.Installers
       
       Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
       Container.BindInterfacesTo<CameraProvider>().AsSingle();
+
+
+      Container.Bind<IPlotsFactory>().To<PlotsFactory>().AsSingle();
     }
 
     private void BindContexts()

@@ -9,37 +9,41 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int SelfDestructTimer = 1;
-    public const int View = 2;
-    public const int ViewPath = 3;
-    public const int ViewPrefab = 4;
-    public const int Id = 5;
-    public const int OwnerId = 6;
-    public const int Transform = 7;
-    public const int WorldPosition = 8;
-    public const int Distance = 9;
-    public const int MainCamera = 10;
-    public const int Offset = 11;
-    public const int RotationAngleX = 12;
-    public const int Farmer = 13;
-    public const int CursorPosition = 14;
-    public const int DestinationGranted = 15;
-    public const int DestinationPoint = 16;
-    public const int Input = 17;
-    public const int Interacted = 18;
-    public const int ReadyToCleanup = 19;
-    public const int WalkablePoint = 20;
-    public const int WalkingProvided = 21;
-    public const int CharacterMover = 22;
-    public const int Direction = 23;
-    public const int MovementAvailable = 24;
-    public const int Moving = 25;
-    public const int Speed = 26;
+    public const int Parent = 1;
+    public const int SelfDestructTimer = 2;
+    public const int View = 3;
+    public const int ViewPath = 4;
+    public const int ViewPrefab = 5;
+    public const int Id = 6;
+    public const int OwnerId = 7;
+    public const int Transform = 8;
+    public const int WorldPosition = 9;
+    public const int Distance = 10;
+    public const int MainCamera = 11;
+    public const int Offset = 12;
+    public const int RotationAngleX = 13;
+    public const int Farmer = 14;
+    public const int CursorPosition = 15;
+    public const int DestinationGranted = 16;
+    public const int DestinationPoint = 17;
+    public const int Input = 18;
+    public const int Interacted = 19;
+    public const int ReadyToCleanup = 20;
+    public const int WalkablePoint = 21;
+    public const int WalkingProvided = 22;
+    public const int CharacterMover = 23;
+    public const int Direction = 24;
+    public const int MovementAvailable = 25;
+    public const int Moving = 26;
+    public const int Speed = 27;
+    public const int Arable = 28;
+    public const int Plot = 29;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "Parent",
         "SelfDestructTimer",
         "View",
         "ViewPath",
@@ -65,11 +69,14 @@ public static class GameComponentsLookup {
         "Direction",
         "MovementAvailable",
         "Moving",
-        "Speed"
+        "Speed",
+        "Arable",
+        "Plot"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.Parent),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPath),
@@ -95,6 +102,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.Speed)
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Plots.Arable),
+        typeof(Code.Gameplay.Features.Plots.Plot)
     };
 }
