@@ -1273,7 +1273,6 @@ MonoBehaviour:
   - {fileID: 2045245008}
   - {fileID: 1170636757}
   - {fileID: 1117386967}
-  _plotsParent: {fileID: 0}
 --- !u!114 &852784449
 MonoBehaviour:
   m_ObjectHideFlags: 0
