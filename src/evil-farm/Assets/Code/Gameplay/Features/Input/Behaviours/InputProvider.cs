@@ -26,6 +26,9 @@ namespace Code.Gameplay.Features.Input.Behaviours
       _camera = camera;
     }
 
+    public void OnLook(InputValue value) => 
+      _cursorLastPosition = value.Get<Vector2>();
+
     public void OnMove(InputValue value)
     {
       _input.Entity.ReplaceCursorPosition(_cursorLastPosition);
@@ -44,22 +47,12 @@ namespace Code.Gameplay.Features.Input.Behaviours
       if(targetEntity == null)
         return;
       
-      _input.Entity.ReplaceInteractedTargetId(targetEntity.Id);
+      _input.Entity.ReplaceTargetId(targetEntity.Id);
       _input.Entity.isInteracted = true;
     }
 
-    private GameEntity PointedEntity()
-    {
-      return _physics.RaycastHitEntity(_cursorLastPosition, _camera.Entity.MainCamera);
-    }
-
-    public void OnLook(InputValue value)
-    {
-      _cursorLastPosition = value.Get<Vector2>();
-      
-      // _input.Entity.ReplaceWalkablePoint(Position(_cursorLastPosition));
-      // _input.Entity.ReplaceCursorPosition(value.Get<Vector2>());
-    }
+    private GameEntity PointedEntity() => 
+      _physics.RaycastHitEntity(_cursorLastPosition, _camera.Entity.MainCamera);
 
     private Vector3 Position(Vector2 value) => 
       _physics.RaycastHitPosition(origin: value, with: _camera.Entity.MainCamera);

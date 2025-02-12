@@ -28,8 +28,8 @@ public static class GameComponentsLookup {
     public const int DestinationPoint = 17;
     public const int Input = 18;
     public const int Interacted = 19;
-    public const int InteractedTargetId = 20;
-    public const int ReadyToCleanup = 21;
+    public const int ReadyToCleanup = 20;
+    public const int TargetId = 21;
     public const int WalkablePoint = 22;
     public const int WalkingProvided = 23;
     public const int CharacterMover = 24;
@@ -38,9 +38,10 @@ public static class GameComponentsLookup {
     public const int Moving = 27;
     public const int Speed = 28;
     public const int Arable = 29;
-    public const int Plot = 30;
+    public const int MenuProvided = 30;
+    public const int Plot = 31;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -63,8 +64,8 @@ public static class GameComponentsLookup {
         "DestinationPoint",
         "Input",
         "Interacted",
-        "InteractedTargetId",
         "ReadyToCleanup",
+        "TargetId",
         "WalkablePoint",
         "WalkingProvided",
         "CharacterMover",
@@ -73,6 +74,7 @@ public static class GameComponentsLookup {
         "Moving",
         "Speed",
         "Arable",
+        "MenuProvided",
         "Plot"
     };
 
@@ -97,8 +99,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.DestinationPoint),
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.Interacted),
-        typeof(Code.Gameplay.Features.Input.InteractedTargetId),
         typeof(Code.Gameplay.Features.Input.ReadyToCleanup),
+        typeof(Code.Gameplay.Features.Input.TargetId),
         typeof(Code.Gameplay.Features.Input.WalkablePoint),
         typeof(Code.Gameplay.Features.Input.WalkingProvided),
         typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent),
@@ -107,6 +109,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Plots.Arable),
+        typeof(Code.Gameplay.Features.Plots.MenuProvided),
         typeof(Code.Gameplay.Features.Plots.Plot)
     };
 }
