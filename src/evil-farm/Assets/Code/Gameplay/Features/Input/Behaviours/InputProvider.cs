@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Services.Physics;
+﻿using Code.Gameplay.Common.Services.Collisions;
+using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Features.Cameras.Provider;
 using Code.Gameplay.Features.Input.Service;
 using UnityEngine;
@@ -25,22 +26,33 @@ namespace Code.Gameplay.Features.Input.Behaviours
       _camera = camera;
     }
 
-    public void OnMove(InputValue value) =>
+    public void OnMove(InputValue value)
+    {
+      _input.Entity.ReplaceCursorPosition(_cursorLastPosition);
       _input.Entity.isWalkingProvided = true;
-    
-    public void OnGrantDestination(InputValue value) => 
-      _input.Entity.isDestinationGranted = true;
+    }
 
-    public void OnInteract(InputValue value) =>
+    public void OnGrantDestination(InputValue value)
+    {
+      _input.Entity.ReplaceWalkablePoint(Position(_cursorLastPosition));
+      _input.Entity.isDestinationGranted = true;
+    }
+
+    public void OnInteract(InputValue value)
+    {
+      _physics.RaycastHitEntity(_cursorLastPosition, _camera.Entity.MainCamera, 20f, CollisionLayer.Interactable);
       _input.Entity.isInteracted = true;
+    }
 
     public void OnLook(InputValue value)
     {
-      _input.Entity.ReplaceWalkablePoint(Position(value));
-      _input.Entity.ReplaceCursorPosition(value.Get<Vector2>());
+      _cursorLastPosition = value.Get<Vector2>();
+      
+      // _input.Entity.ReplaceWalkablePoint(Position(_cursorLastPosition));
+      // _input.Entity.ReplaceCursorPosition(value.Get<Vector2>());
     }
 
-    private Vector3 Position(InputValue value) => 
-      _physics.RaycastHit(from: value.Get<Vector2>(), with: _camera.Entity.MainCamera);
+    private Vector3 Position(Vector2 value) => 
+      _physics.RaycastHitPosition(origin: value, with: _camera.Entity.MainCamera);
   }
 }

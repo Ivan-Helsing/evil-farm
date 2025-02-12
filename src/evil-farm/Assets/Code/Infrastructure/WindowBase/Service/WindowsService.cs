@@ -1,14 +1,18 @@
-﻿namespace Code.Infrastructure.WindowBase.Service
+﻿using Code.Infrastructure.WindowBase.Factory;
+using UnityEngine;
+
+namespace Code.Infrastructure.WindowBase.Service
 {
   public class WindowsService : IWindowsService
   {
-    public void ShowPlotMenu()
+    private readonly IWindowsFactory _factory;
+
+    public WindowsService(IWindowsFactory factory)
     {
-      
+      _factory = factory;
     }
 
-    public void Close(WindowTypeId windowId)
-    {
-    }
+    public void Show(WindowTypeId typeId, Transform parent) => 
+      _factory.Create(typeId, parent);
   }
 }

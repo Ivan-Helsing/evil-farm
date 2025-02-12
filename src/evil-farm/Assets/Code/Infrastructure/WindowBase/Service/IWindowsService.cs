@@ -1,8 +1,9 @@
-﻿namespace Code.Infrastructure.WindowBase.Service
+﻿using UnityEngine;
+
+namespace Code.Infrastructure.WindowBase.Service
 {
   public interface IWindowsService
   {
-    void ShowPlotMenu();
-    void Close(WindowTypeId windowId);
+    void Show(WindowTypeId typeId, Transform parent);
   }
 }
