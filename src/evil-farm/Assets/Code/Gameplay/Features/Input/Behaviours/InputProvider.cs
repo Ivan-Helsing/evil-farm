@@ -40,8 +40,17 @@ namespace Code.Gameplay.Features.Input.Behaviours
 
     public void OnInteract(InputValue value)
     {
-      _physics.RaycastHitEntity(_cursorLastPosition, _camera.Entity.MainCamera, 20f, CollisionLayer.Interactable);
+      GameEntity targetEntity = PointedEntity();
+      if(targetEntity == null)
+        return;
+      
+      _input.Entity.ReplaceInteractedTargetId(targetEntity.Id);
       _input.Entity.isInteracted = true;
+    }
+
+    private GameEntity PointedEntity()
+    {
+      return _physics.RaycastHitEntity(_cursorLastPosition, _camera.Entity.MainCamera);
     }
 
     public void OnLook(InputValue value)

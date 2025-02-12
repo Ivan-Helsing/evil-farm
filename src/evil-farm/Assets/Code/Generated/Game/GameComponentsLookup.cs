@@ -28,18 +28,19 @@ public static class GameComponentsLookup {
     public const int DestinationPoint = 17;
     public const int Input = 18;
     public const int Interacted = 19;
-    public const int ReadyToCleanup = 20;
-    public const int WalkablePoint = 21;
-    public const int WalkingProvided = 22;
-    public const int CharacterMover = 23;
-    public const int Direction = 24;
-    public const int MovementAvailable = 25;
-    public const int Moving = 26;
-    public const int Speed = 27;
-    public const int Arable = 28;
-    public const int Plot = 29;
+    public const int InteractedTargetId = 20;
+    public const int ReadyToCleanup = 21;
+    public const int WalkablePoint = 22;
+    public const int WalkingProvided = 23;
+    public const int CharacterMover = 24;
+    public const int Direction = 25;
+    public const int MovementAvailable = 26;
+    public const int Moving = 27;
+    public const int Speed = 28;
+    public const int Arable = 29;
+    public const int Plot = 30;
 
-    public const int TotalComponents = 30;
+    public const int TotalComponents = 31;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -62,6 +63,7 @@ public static class GameComponentsLookup {
         "DestinationPoint",
         "Input",
         "Interacted",
+        "InteractedTargetId",
         "ReadyToCleanup",
         "WalkablePoint",
         "WalkingProvided",
@@ -95,6 +97,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.DestinationPoint),
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.Interacted),
+        typeof(Code.Gameplay.Features.Input.InteractedTargetId),
         typeof(Code.Gameplay.Features.Input.ReadyToCleanup),
         typeof(Code.Gameplay.Features.Input.WalkablePoint),
         typeof(Code.Gameplay.Features.Input.WalkingProvided),

@@ -12,5 +12,7 @@ namespace Code.Gameplay.Features.Input
   [Game] public class WalkablePoint : IComponent { public Vector3 Value; }
   [Game] public class DestinationPoint : IComponent { public Vector3 Value; }
   
+  [Game] public class InteractedTargetId : IComponent { public int Value; }
+  
   [Game] public class ReadyToCleanup : IComponent {}
 }

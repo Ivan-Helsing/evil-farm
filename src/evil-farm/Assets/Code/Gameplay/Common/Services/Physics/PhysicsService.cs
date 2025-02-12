@@ -13,7 +13,7 @@ namespace Code.Gameplay.Common.Services.Physics
 
     public Vector3 Gravity => UnityEngine.Physics.gravity;
     
-    public GameEntity RaycastHitEntity(Vector2 origin, Camera with, float maxDistance, CollisionLayer layer = CollisionLayer.Interactable)
+    public GameEntity RaycastHitEntity(Vector2 origin, Camera with, float maxDistance = 30f, CollisionLayer layer = CollisionLayer.Interactable)
     {
       Ray ray = with.ScreenPointToRay(origin);
       
