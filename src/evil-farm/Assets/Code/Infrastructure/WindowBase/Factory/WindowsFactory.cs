@@ -1,38 +1,37 @@
 ﻿using System;
+using Code.Common.Entities;
+using Code.Common.Extensions;
+using Code.Gameplay.Common.Services.Identifier;
 using Code.Infrastructure.Services.AssetProviding;
-using Code.Infrastructure.WindowBase.Base;
-using UnityEngine;
-using Zenject;
 
 namespace Code.Infrastructure.WindowBase.Factory
 {
   public class WindowsFactory : IWindowsFactory
   {
-    private readonly IInstantiator _instantiator;
-    private readonly IAssetProvider _assets;
+    private readonly IIdentifierService _identifiers;
 
-    public WindowsFactory(IInstantiator instantiator, IAssetProvider assets)
+    public WindowsFactory(IIdentifierService identifiers) => 
+      _identifiers = identifiers;
+
+    public GameEntity Create(WindowTypeId typeId)
     {
-      _instantiator = instantiator;
-      _assets = assets;
+      return CreateEntity.Empty()
+          .AddId(_identifiers.NextId())
+          .AddWindowId(typeId)
+          .AddViewPath(WindowPath(typeId))
+          
+          .With(x=>x.isPlantWindow = true)
+        ;
     }
 
-    public GameWindow Create(WindowTypeId typeId, Transform parent) => 
-      _instantiator.InstantiatePrefabForComponent<GameWindow>(
-        Window(typeId), 
-        new Vector3(0, .5f, 0),
-        Quaternion.identity, 
-        parent);
-
-    private GameWindow Window(WindowTypeId typeId)
+    private string WindowPath(WindowTypeId windowTypeId)
     {
-      switch (typeId)
+      switch (windowTypeId)
       {
         case WindowTypeId.PlotMenu:
-          return _assets.LoadAsset<GameWindow>(AssetPath.PlotMenu);
+          return AssetPath.PlotMenu;
       }
-
-      throw new Exception($"Window type {typeId} is not supported");
+      throw new Exception("Unknown window type");
     }
   }
 }

@@ -28,10 +28,18 @@ namespace Code.Gameplay.Features.Input.Systems
 
         if (farmer.TargetId != target.Id)
         {
+          CleanupLastPlot(farmer);
+
           target.isInteracted = true;
           farmer.ReplaceTargetId(input.TargetId);
         }
       }
+    }
+
+    private void CleanupLastPlot(GameEntity farmer)
+    {
+      GameEntity plot = _game.GetEntityWithId(farmer.TargetId);
+      plot.isReadyToCleanup = true;
     }
   }
 }

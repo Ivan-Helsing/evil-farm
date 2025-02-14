@@ -2,6 +2,7 @@
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Services.Identifier;
 using Code.Infrastructure.Services.AssetProviding;
+using Code.Infrastructure.WindowBase;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Plots.Factory
@@ -20,6 +21,8 @@ namespace Code.Gameplay.Features.Plots.Factory
           .AddWorldPosition(at)
           .AddViewPath(AssetPath.Plot)
           .AddParent(with)
+          
+          .AddWindowId(WindowTypeId.PlotMenu)
         
           .With(x=>x.isPlot = true)
           .With(x=>x.isArable = true)

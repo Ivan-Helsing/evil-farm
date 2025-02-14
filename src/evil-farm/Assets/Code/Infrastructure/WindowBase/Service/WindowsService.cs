@@ -1,5 +1,4 @@
 ﻿using Code.Infrastructure.WindowBase.Factory;
-using UnityEngine;
 
 namespace Code.Infrastructure.WindowBase.Service
 {
@@ -12,7 +11,7 @@ namespace Code.Infrastructure.WindowBase.Service
       _factory = factory;
     }
 
-    public void Show(WindowTypeId typeId, Transform parent) => 
-      _factory.Create(typeId, parent);
+    public GameEntity Show(WindowTypeId typeId) => 
+      _factory.Create(typeId);
   }
 }
