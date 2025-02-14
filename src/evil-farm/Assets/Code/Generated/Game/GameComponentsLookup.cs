@@ -38,16 +38,18 @@ public static class GameComponentsLookup {
     public const int Moving = 27;
     public const int Speed = 28;
     public const int Arable = 29;
-    public const int GrowPlant = 30;
-    public const int InteractionProvider = 31;
-    public const int MenuProvided = 32;
-    public const int Plot = 33;
-    public const int MenuId = 34;
-    public const int ParentId = 35;
-    public const int PlantWindow = 36;
-    public const int WindowId = 37;
+    public const int GrowingDuration = 30;
+    public const int GrowingTimer = 31;
+    public const int GrowPlant = 32;
+    public const int InteractionProvider = 33;
+    public const int Plot = 34;
+    public const int ReadyToHarvest = 35;
+    public const int MenuId = 36;
+    public const int ParentId = 37;
+    public const int PlantWindow = 38;
+    public const int WindowId = 39;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 40;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -80,10 +82,12 @@ public static class GameComponentsLookup {
         "Moving",
         "Speed",
         "Arable",
+        "GrowingDuration",
+        "GrowingTimer",
         "GrowPlant",
         "InteractionProvider",
-        "MenuProvided",
         "Plot",
+        "ReadyToHarvest",
         "MenuId",
         "ParentId",
         "PlantWindow",
@@ -121,10 +125,12 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Plots.Arable),
+        typeof(Code.Gameplay.Features.Plots.GrowingDuration),
+        typeof(Code.Gameplay.Features.Plots.GrowingTimer),
         typeof(Code.Gameplay.Features.Plots.GrowPlant),
         typeof(Code.Gameplay.Features.Plots.InteractionProviderComponent),
-        typeof(Code.Gameplay.Features.Plots.MenuProvided),
         typeof(Code.Gameplay.Features.Plots.Plot),
+        typeof(Code.Gameplay.Features.Plots.ReadyToHarvest),
         typeof(Code.Infrastructure.WindowBase.MenuId),
         typeof(Code.Infrastructure.WindowBase.ParentId),
         typeof(Code.Infrastructure.WindowBase.PlantWindow),

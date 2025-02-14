@@ -8,12 +8,10 @@ namespace Code.Infrastructure.WindowBase.Base
   {
     [SerializeField] private EntityBehaviour EntityView;
 
-    public void Plant(PlantTypeId typeId)
+    public void Plant(PlantTypeId typeId, float growingDuration)
     {
       EntityView.Entity.AddGrowPlant(typeId);
-      // _parentEntity.Arable = false;
-      // _parentEntity.AddPlantTypeId(typeId);
-      // _parentEntity.
+      EntityView.Entity.AddGrowingDuration(growingDuration);
     }
   }
 }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMenuProvided;
+    static Entitas.IMatcher<GameEntity> _matcherReadyToHarvest;
 
-    public static Entitas.IMatcher<GameEntity> MenuProvided {
+    public static Entitas.IMatcher<GameEntity> ReadyToHarvest {
         get {
-            if (_matcherMenuProvided == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MenuProvided);
+            if (_matcherReadyToHarvest == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ReadyToHarvest);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMenuProvided = matcher;
+                _matcherReadyToHarvest = matcher;
             }
 
-            return _matcherMenuProvided;
+            return _matcherReadyToHarvest;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Plots.MenuProvided menuProvidedComponent = new Code.Gameplay.Features.Plots.MenuProvided();
+    static readonly Code.Gameplay.Features.Plots.ReadyToHarvest readyToHarvestComponent = new Code.Gameplay.Features.Plots.ReadyToHarvest();
 
-    public bool isMenuProvided {
-        get { return HasComponent(GameComponentsLookup.MenuProvided); }
+    public bool isReadyToHarvest {
+        get { return HasComponent(GameComponentsLookup.ReadyToHarvest); }
         set {
-            if (value != isMenuProvided) {
-                var index = GameComponentsLookup.MenuProvided;
+            if (value != isReadyToHarvest) {
+                var index = GameComponentsLookup.ReadyToHarvest;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : menuProvidedComponent;
+                            : readyToHarvestComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -15,7 +15,8 @@ namespace Code.Gameplay.Features.Plots.Systems
           GameMatcher.Id,
           GameMatcher.ParentId,
           GameMatcher.GrowPlant,
-          GameMatcher.PlantWindow));
+          GameMatcher.PlantWindow,
+          GameMatcher.GrowingDuration));
     }
 
     public void Execute()
@@ -24,8 +25,13 @@ namespace Code.Gameplay.Features.Plots.Systems
       {
         GameEntity plot = _game.GetEntityWithId(window.ParentId);
         plot.AddGrowPlant(window.GrowPlant);
+        plot.AddGrowingDuration(window.GrowingDuration);
+        plot.AddGrowingTimer(window.GrowingDuration);
 
-        plot.RemoveMenuId();
+        if(plot.hasMenuId)
+          plot.RemoveMenuId();
+        
+        plot.isArable = false;
         window.isDestructed = true;
       }
     }

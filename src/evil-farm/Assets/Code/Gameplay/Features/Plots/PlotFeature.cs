@@ -9,6 +9,10 @@ namespace Code.Gameplay.Features.Plots
     {
       Add(systems.Create<MenuPopupSystem>());
       Add(systems.Create<SowGrainsSystem>());
+      Add(systems.Create<CropGrowingSystem>());
+      
+      
+      Add(systems.Create<PlotInteractionCleanupSystem>());
     }
   }
   

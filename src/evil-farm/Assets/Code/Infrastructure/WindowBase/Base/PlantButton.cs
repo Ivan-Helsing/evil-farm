@@ -6,8 +6,9 @@ namespace Code.Infrastructure.WindowBase.Base
   public class PlantButton : MonoBehaviour
   {
     [SerializeField] private PlantTypeId TypeId;
+    [SerializeField] private float GrowingDuration;
     [SerializeField] private PlantWindow PlantWindow;
 
-    public void Sow() => PlantWindow.Plant(TypeId);
+    public void Sow() => PlantWindow.Plant(TypeId, GrowingDuration);
   }
 }

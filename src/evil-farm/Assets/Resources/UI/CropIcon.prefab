@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e17d0fa25e84422a57c5e8502073c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeId: 1
+  TypeId: 0
+  GrowingDuration: 0
   PlantWindow: {fileID: 0}
 --- !u!1 &2915743687751955208
 GameObject:
