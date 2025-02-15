@@ -6,5 +6,6 @@ namespace Code.Infrastructure.Entities.View.Factory
   {
     EntityBehaviour CreateViewForEntity(GameEntity entity, Vector3 at);
     EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity, Vector3 at);
+    EntityBehaviour CreateViewForEntityWithParent(GameEntity entity, Vector3 at, Transform parent);
   }
 }

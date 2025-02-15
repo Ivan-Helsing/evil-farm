@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Common.Services.Identifier;
+﻿using Code.Gameplay.Common.Services;
+using Code.Gameplay.Common.Services.Identifier;
 using Code.Gameplay.Common.Services.Physics;
 using Code.Gameplay.Common.Services.Screens;
 using Code.Gameplay.Common.Services.Time;
@@ -8,6 +9,7 @@ using Code.Gameplay.Features.Farmer.Factory;
 using Code.Gameplay.Features.Farmer.Provider;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
+using Code.Gameplay.Features.Plots.Factory;
 using Code.Infrastructure.Entities.Factory;
 using Code.Infrastructure.Entities.Services;
 using Code.Infrastructure.Entities.View.Factory;
@@ -18,6 +20,8 @@ using Code.Infrastructure.Services.Scenes;
 using Code.Infrastructure.Services.SystemFactory;
 using Code.Infrastructure.States;
 using Code.Infrastructure.UI.Loading;
+using Code.Infrastructure.WindowBase.Factory;
+using Code.Infrastructure.WindowBase.Service;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -46,6 +50,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
       Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+      Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
       Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
       Container.Bind<IScreenService>().To<ScreenService>().AsSingle();
     }
@@ -60,6 +65,9 @@ namespace Code.Infrastructure.Installers
       
       Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
       Container.BindInterfacesTo<CameraProvider>().AsSingle();
+
+
+      Container.Bind<IPlotsFactory>().To<PlotsFactory>().AsSingle();
     }
 
     private void BindContexts()
@@ -79,6 +87,12 @@ namespace Code.Infrastructure.Installers
       Container.Bind<ILoadingCurtain>().FromInstance(curtain);
     }
 
+    private void BindGameStateMachine()
+    {
+      Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+      Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
+    }
+
     private void BindInfrastructureServices()
     {
       Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
@@ -91,12 +105,8 @@ namespace Code.Infrastructure.Installers
       Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
       Container.BindInterfacesTo<LevelDataProvider>().AsSingle();
       
-    }
-
-    private void BindGameStateMachine()
-    {
-      Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
-      Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
+      Container.Bind<IWindowsFactory>().To<WindowsFactory>().AsSingle();
+      Container.Bind<IWindowsService>().To<WindowsService>().AsSingle();
     }
   }
 }

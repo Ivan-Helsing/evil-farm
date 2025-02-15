@@ -29,6 +29,20 @@ namespace Code.Infrastructure.Entities.View.Factory
       return view;
     }
     
+    public EntityBehaviour CreateViewForEntityWithParent(GameEntity entity, Vector3 at, Transform parent)
+    {
+      EntityBehaviour viewPrefab = _assets.LoadAsset<EntityBehaviour>(entity.ViewPath);
+      EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
+        viewPrefab,
+        position: at,
+        rotation: Quaternion.identity,
+        parentTransform: parent);
+      
+      view.SetEntity(entity);
+      
+      return view;
+    }
+    
     public EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity, Vector3 at)
     {
       EntityBehaviour view = _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(

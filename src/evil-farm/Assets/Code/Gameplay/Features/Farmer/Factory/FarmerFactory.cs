@@ -15,12 +15,16 @@ namespace Code.Gameplay.Features.Farmer.Factory
 
     public GameEntity Create(Vector3 initialPoint)
     {
+      int selfId = _identifiers.NextId();
+      
       return CreateEntity.Empty()
-          .AddId(_identifiers.NextId())
+          .AddId(selfId)
           .AddViewPath(AssetPath.Farmer)
           .AddWorldPosition(initialPoint)
           
           .AddSpeed(5)
+          
+          .AddTargetId(selfId)
           
           .With(x => x.isFarmer = true)
           .With(x => x.isMovementAvailable = true)

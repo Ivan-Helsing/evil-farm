@@ -11,7 +11,10 @@ namespace Code.Common.Destruct.Systems
 
     public CleanupGameDestructedViewSystem(GameContext game)
     {
-      _entities = game.GetGroup(GameMatcher.AllOf(GameMatcher.Destructed, GameMatcher.View));
+      _entities = game.GetGroup(GameMatcher
+        .AllOf(
+          GameMatcher.Destructed, 
+          GameMatcher.View));
     }
 
     public void Cleanup()

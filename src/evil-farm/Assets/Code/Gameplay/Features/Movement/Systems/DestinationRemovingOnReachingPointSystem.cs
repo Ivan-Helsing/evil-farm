@@ -13,7 +13,8 @@ namespace Code.Gameplay.Features.Movement.Systems
       _farmers = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Farmer,
-          GameMatcher.DestinationPoint));
+          GameMatcher.DestinationPoint)
+        .NoneOf(GameMatcher.MovingToSowThePlot));
     }
 
     public void Execute()
@@ -28,9 +29,7 @@ namespace Code.Gameplay.Features.Movement.Systems
       }
     }
 
-    private bool ReachedDestination(GameEntity farmer)
-    {
-      return Vector3.Distance(farmer.Transform.position, farmer.DestinationPoint) < Epsilon;
-    }
+    private bool ReachedDestination(GameEntity farmer) => 
+      Vector3.Distance(farmer.Transform.position, farmer.DestinationPoint) < Epsilon;
   }
 }

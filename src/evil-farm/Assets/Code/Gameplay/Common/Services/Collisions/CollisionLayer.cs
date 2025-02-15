@@ -5,6 +5,7 @@
     Default = 0,
     
     Walkable = 10,
+    Interactable = 11,
     
   }
 }
