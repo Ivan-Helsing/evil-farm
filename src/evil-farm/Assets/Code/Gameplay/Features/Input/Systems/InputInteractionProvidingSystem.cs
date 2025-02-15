@@ -31,6 +31,7 @@ namespace Code.Gameplay.Features.Input.Systems
           CleanupLastPlot(farmer);
 
           target.isInteracted = true;
+          target.ReplaceTargetId(input.OwnerId);
           farmer.ReplaceTargetId(input.TargetId);
         }
       }

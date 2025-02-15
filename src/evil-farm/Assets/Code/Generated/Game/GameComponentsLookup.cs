@@ -36,20 +36,24 @@ public static class GameComponentsLookup {
     public const int Direction = 25;
     public const int MovementAvailable = 26;
     public const int Moving = 27;
-    public const int Speed = 28;
-    public const int Arable = 29;
-    public const int GrowingDuration = 30;
-    public const int GrowingTimer = 31;
-    public const int GrowPlant = 32;
-    public const int InteractionProvider = 33;
-    public const int Plot = 34;
-    public const int ReadyToHarvest = 35;
-    public const int MenuId = 36;
-    public const int ParentId = 37;
-    public const int PlantWindow = 38;
-    public const int WindowId = 39;
+    public const int MovingToSowThePlot = 28;
+    public const int ReadyToAppointDestination = 29;
+    public const int Speed = 30;
+    public const int Arable = 31;
+    public const int GrowingDuration = 32;
+    public const int GrowingTimer = 33;
+    public const int GrowPlant = 34;
+    public const int InteractionProvider = 35;
+    public const int Plot = 36;
+    public const int ReadyToBeSowed = 37;
+    public const int ReadyToHarvest = 38;
+    public const int Sowed = 39;
+    public const int MenuId = 40;
+    public const int ParentId = 41;
+    public const int PlantWindow = 42;
+    public const int WindowId = 43;
 
-    public const int TotalComponents = 40;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -80,6 +84,8 @@ public static class GameComponentsLookup {
         "Direction",
         "MovementAvailable",
         "Moving",
+        "MovingToSowThePlot",
+        "ReadyToAppointDestination",
         "Speed",
         "Arable",
         "GrowingDuration",
@@ -87,7 +93,9 @@ public static class GameComponentsLookup {
         "GrowPlant",
         "InteractionProvider",
         "Plot",
+        "ReadyToBeSowed",
         "ReadyToHarvest",
+        "Sowed",
         "MenuId",
         "ParentId",
         "PlantWindow",
@@ -123,6 +131,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.MovingToSowThePlot),
+        typeof(Code.Gameplay.Features.Movement.ReadyToAppointDestination),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Plots.Arable),
         typeof(Code.Gameplay.Features.Plots.GrowingDuration),
@@ -130,7 +140,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Plots.GrowPlant),
         typeof(Code.Gameplay.Features.Plots.InteractionProviderComponent),
         typeof(Code.Gameplay.Features.Plots.Plot),
+        typeof(Code.Gameplay.Features.Plots.ReadyToBeSowed),
         typeof(Code.Gameplay.Features.Plots.ReadyToHarvest),
+        typeof(Code.Gameplay.Features.Plots.Sowed),
         typeof(Code.Infrastructure.WindowBase.MenuId),
         typeof(Code.Infrastructure.WindowBase.ParentId),
         typeof(Code.Infrastructure.WindowBase.PlantWindow),

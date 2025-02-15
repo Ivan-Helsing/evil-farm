@@ -28,9 +28,7 @@ namespace Code.Gameplay.Features.Movement.Systems
       }
     }
 
-    private bool ReachedDestination(GameEntity farmer)
-    {
-      return Vector3.Distance(farmer.Transform.position, farmer.DestinationPoint) < Epsilon;
-    }
+    private bool ReachedDestination(GameEntity farmer) => 
+      Vector3.Distance(farmer.Transform.position, farmer.DestinationPoint) < Epsilon;
   }
 }

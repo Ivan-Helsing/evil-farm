@@ -16,9 +16,10 @@ namespace Code.Gameplay.Features.Plots.Systems
       _plots = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Plot,
-          GameMatcher.GrowingDuration,
+          GameMatcher.Sowed,
+          GameMatcher.GrowPlant,
           GameMatcher.GrowingTimer,
-          GameMatcher.GrowPlant));
+          GameMatcher.GrowingDuration));
     }
 
     public void Execute()

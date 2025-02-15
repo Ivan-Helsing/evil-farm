@@ -8,7 +8,10 @@ namespace Code.Gameplay.Features.Plots
     public PlotFeature(ISystemFactory systems)
     {
       Add(systems.Create<MenuPopupSystem>());
-      Add(systems.Create<SowGrainsSystem>());
+      
+      Add(systems.Create<DataProvidingForSowingGrainsSystem>());
+      Add(systems.Create<FarmerSwitchDestinationToSowingPlotSystem>());
+      
       Add(systems.Create<CropGrowingSystem>());
       
       
