@@ -13,7 +13,8 @@ namespace Code.Gameplay.Features.Movement.Systems
       _farmers = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Farmer,
-          GameMatcher.DestinationPoint));
+          GameMatcher.DestinationPoint)
+        .NoneOf(GameMatcher.MovingToSowThePlot));
     }
 
     public void Execute()

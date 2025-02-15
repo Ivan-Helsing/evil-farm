@@ -32,7 +32,9 @@ namespace Code.Gameplay.Features.Input.Systems
 
           target.isInteracted = true;
           target.ReplaceTargetId(input.OwnerId);
+          
           farmer.ReplaceTargetId(input.TargetId);
+          farmer.ReplaceDestinationRadius(target.DestinationRadius);
         }
       }
     }

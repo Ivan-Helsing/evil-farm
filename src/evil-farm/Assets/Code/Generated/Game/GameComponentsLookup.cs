@@ -23,37 +23,40 @@ public static class GameComponentsLookup {
     public const int Offset = 12;
     public const int RotationAngleX = 13;
     public const int Farmer = 14;
-    public const int CursorPosition = 15;
-    public const int DestinationGranted = 16;
-    public const int DestinationPoint = 17;
-    public const int Input = 18;
-    public const int Interacted = 19;
-    public const int ReadyToCleanup = 20;
-    public const int TargetId = 21;
-    public const int WalkablePoint = 22;
-    public const int WalkingProvided = 23;
-    public const int CharacterMover = 24;
-    public const int Direction = 25;
-    public const int MovementAvailable = 26;
-    public const int Moving = 27;
-    public const int MovingToSowThePlot = 28;
-    public const int ReadyToAppointDestination = 29;
-    public const int Speed = 30;
-    public const int Arable = 31;
-    public const int GrowingDuration = 32;
-    public const int GrowingTimer = 33;
-    public const int GrowPlant = 34;
-    public const int InteractionProvider = 35;
-    public const int Plot = 36;
-    public const int ReadyToBeSowed = 37;
-    public const int ReadyToHarvest = 38;
-    public const int Sowed = 39;
-    public const int MenuId = 40;
-    public const int ParentId = 41;
-    public const int PlantWindow = 42;
-    public const int WindowId = 43;
+    public const int Harvesting = 15;
+    public const int PerformingSow = 16;
+    public const int CursorPosition = 17;
+    public const int DestinationGranted = 18;
+    public const int DestinationPoint = 19;
+    public const int Input = 20;
+    public const int Interacted = 21;
+    public const int ReadyToCleanup = 22;
+    public const int TargetId = 23;
+    public const int WalkablePoint = 24;
+    public const int WalkingProvided = 25;
+    public const int CharacterMover = 26;
+    public const int DestinationRadius = 27;
+    public const int Direction = 28;
+    public const int MovementAvailable = 29;
+    public const int Moving = 30;
+    public const int MovingToSowThePlot = 31;
+    public const int ReadyToAppointDestination = 32;
+    public const int Speed = 33;
+    public const int Arable = 34;
+    public const int GrowingDuration = 35;
+    public const int GrowingTimer = 36;
+    public const int GrowPlant = 37;
+    public const int InteractionProvider = 38;
+    public const int Plot = 39;
+    public const int ReadyToBeSowed = 40;
+    public const int ReadyToHarvest = 41;
+    public const int Sowed = 42;
+    public const int MenuId = 43;
+    public const int ParentId = 44;
+    public const int PlantWindow = 45;
+    public const int WindowId = 46;
 
-    public const int TotalComponents = 44;
+    public const int TotalComponents = 47;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -71,6 +74,8 @@ public static class GameComponentsLookup {
         "Offset",
         "RotationAngleX",
         "Farmer",
+        "Harvesting",
+        "PerformingSow",
         "CursorPosition",
         "DestinationGranted",
         "DestinationPoint",
@@ -81,6 +86,7 @@ public static class GameComponentsLookup {
         "WalkablePoint",
         "WalkingProvided",
         "CharacterMover",
+        "DestinationRadius",
         "Direction",
         "MovementAvailable",
         "Moving",
@@ -118,6 +124,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cameras.Offset),
         typeof(Code.Gameplay.Features.Cameras.RotationAngleX),
         typeof(Code.Gameplay.Features.Farmer.Farmer),
+        typeof(Code.Gameplay.Features.Farmer.Harvesting),
+        typeof(Code.Gameplay.Features.Farmer.PerformingSow),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.DestinationGranted),
         typeof(Code.Gameplay.Features.Input.DestinationPoint),
@@ -128,6 +136,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Input.WalkablePoint),
         typeof(Code.Gameplay.Features.Input.WalkingProvided),
         typeof(Code.Gameplay.Features.Movement.CharacterMoverComponent),
+        typeof(Code.Gameplay.Features.Movement.DestinationRadius),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
