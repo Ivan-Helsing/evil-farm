@@ -4671,9 +4671,11 @@ GameObject:
   - component: {fileID: 5937467155964460007}
   - component: {fileID: -1196170172684932239}
   - component: {fileID: -1660933443514438567}
+  - component: {fileID: -4480895313848408933}
   - component: {fileID: -1209121315022254438}
   - component: {fileID: -5419422188793823874}
   - component: {fileID: -8553191221096814499}
+  - component: {fileID: 7138641292600202371}
   m_Layer: 0
   m_Name: Farmer
   m_TagString: Untagged
@@ -4759,6 +4761,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: -1196170172684932239}
+--- !u!114 &-4480895313848408933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772264505136217308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e252cfd10d4a4086b1e5e2a99ccd5c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5937467155964460007}
 --- !u!114 &-1209121315022254438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4798,6 +4813,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: -1209121315022254438}
   Mover: {fileID: -1660933443514438567}
+--- !u!114 &7138641292600202371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772264505136217308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7419d086a6804558bb546062ad05b9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: -1209121315022254438}
+  Animator: {fileID: -4480895313848408933}
 --- !u!1 &7779247227886068136
 GameObject:
   m_ObjectHideFlags: 0

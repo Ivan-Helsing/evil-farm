@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Plots.Factory
           .AddViewPath(AssetPath.Plot)
           .AddParent(with)
           
-          .AddDestinationRadius(1f)
+          .AddDestinationRadius(1.7f)
           .AddWindowId(WindowTypeId.PlotMenu)
         
           .With(x=>x.isPlot = true)
