@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherChangingAnimationState;
+    static Entitas.IMatcher<GameEntity> _matcherReadyToSwitchAnimation;
 
-    public static Entitas.IMatcher<GameEntity> ChangingAnimationState {
+    public static Entitas.IMatcher<GameEntity> ReadyToSwitchAnimation {
         get {
-            if (_matcherChangingAnimationState == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ChangingAnimationState);
+            if (_matcherReadyToSwitchAnimation == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.ReadyToSwitchAnimation);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherChangingAnimationState = matcher;
+                _matcherReadyToSwitchAnimation = matcher;
             }
 
-            return _matcherChangingAnimationState;
+            return _matcherReadyToSwitchAnimation;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Animations.ChangingAnimationState changingAnimationStateComponent = new Code.Gameplay.Features.Animations.ChangingAnimationState();
+    static readonly Code.Gameplay.Features.Animations.ReadyToSwitchAnimation readyToSwitchAnimationComponent = new Code.Gameplay.Features.Animations.ReadyToSwitchAnimation();
 
-    public bool isChangingAnimationState {
-        get { return HasComponent(GameComponentsLookup.ChangingAnimationState); }
+    public bool isReadyToSwitchAnimation {
+        get { return HasComponent(GameComponentsLookup.ReadyToSwitchAnimation); }
         set {
-            if (value != isChangingAnimationState) {
-                var index = GameComponentsLookup.ChangingAnimationState;
+            if (value != isReadyToSwitchAnimation) {
+                var index = GameComponentsLookup.ReadyToSwitchAnimation;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : changingAnimationStateComponent;
+                            : readyToSwitchAnimationComponent;
 
                     AddComponent(index, component);
                 } else {

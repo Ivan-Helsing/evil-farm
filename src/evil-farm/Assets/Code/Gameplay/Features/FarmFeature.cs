@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Animations;
 using Code.Gameplay.Features.Cameras;
 using Code.Gameplay.Features.Farmer;
 using Code.Gameplay.Features.Input;
@@ -16,7 +17,9 @@ namespace Code.Gameplay.Features
       Add(systems.Create<BindViewFeature>());
       
       Add(systems.Create<InputFeature>());
+      Add(systems.Create<AnimationFeature>());
       Add(systems.Create<FarmerFeature>());
+      
       Add(systems.Create<MovementFeature>());
       Add(systems.Create<PlotFeature>());
 

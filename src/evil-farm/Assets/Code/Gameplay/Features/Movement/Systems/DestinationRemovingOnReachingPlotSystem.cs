@@ -25,7 +25,8 @@ namespace Code.Gameplay.Features.Movement.Systems
       {
         if (ReachedDestination(farmer))
         {
-          farmer.isPerformingSow = true;
+          farmer.isSowing = true;
+          farmer.isChangingAnimationState = true;
           
           farmer.isMoving = false;
           farmer.isMovingToSowThePlot = false;
@@ -34,7 +35,12 @@ namespace Code.Gameplay.Features.Movement.Systems
       }
     }
 
-    private bool ReachedDestination(GameEntity farmer) =>
-      Vector3.Distance(farmer.Transform.position, farmer.DestinationPoint) < farmer.DestinationRadius;
+    private bool ReachedDestination(GameEntity entity)
+    {
+      var farmerPosition = new Vector2(entity.Transform.position.x, entity.Transform.position.z);
+      var destinationPoint = new Vector2(entity.DestinationPoint.x, entity.DestinationPoint.z);
+      
+      return Vector2.Distance(farmerPosition, destinationPoint) < entity.DestinationRadius;
+    }
   }
 }

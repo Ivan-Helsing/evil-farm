@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Gameplay.Features.Animations;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Farmer.Behaviours
@@ -18,21 +19,25 @@ namespace Code.Gameplay.Features.Farmer.Behaviours
       {
         case AnimationTypeId.Idle:
           ResetAllToIdle();
-          break;
+          return;
         case AnimationTypeId.Run:
           PlayMoving();
-          break;
+          return;
         case AnimationTypeId.Harvest:
           PlayHarvesting();
-          break;
+          return;
         case AnimationTypeId.Sow:
           PlaySowing();
-          break;
+          return;
       }
-      throw new Exception("Unknown animation type");
+      throw new Exception($"Animation type: {animation} is not supported");
     }
 
-    private void PlayMoving() => _animator.SetBool(_isMovingHash, true);
+    private void PlayMoving()
+    {
+      _animator.SetBool(_isMovingHash, true);
+      _animator.SetBool(_isInAction, false);
+    }
 
     private void ResetAllToIdle()
     {

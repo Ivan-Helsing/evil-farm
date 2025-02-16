@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Input.Systems
         
         farmer.ReplaceDirection(_screen.BindZeroToCenter(input.CursorPosition));
         farmer.isMoving = true;
+        farmer.isChangingAnimationState = true;
 
         if (farmer.hasDestinationPoint)
           farmer.RemoveDestinationPoint();

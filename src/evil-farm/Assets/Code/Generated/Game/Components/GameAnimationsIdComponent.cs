@@ -33,21 +33,21 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Farmer.AnimationsId animationsId { get { return (Code.Gameplay.Features.Farmer.AnimationsId)GetComponent(GameComponentsLookup.AnimationsId); } }
-    public Code.Gameplay.Features.Farmer.AnimationTypeId AnimationsId { get { return animationsId.Value; } }
+    public Code.Gameplay.Features.Animations.AnimationsId animationsId { get { return (Code.Gameplay.Features.Animations.AnimationsId)GetComponent(GameComponentsLookup.AnimationsId); } }
+    public Code.Gameplay.Features.Animations.AnimationTypeId AnimationsId { get { return animationsId.Value; } }
     public bool hasAnimationsId { get { return HasComponent(GameComponentsLookup.AnimationsId); } }
 
-    public GameEntity AddAnimationsId(Code.Gameplay.Features.Farmer.AnimationTypeId newValue) {
+    public GameEntity AddAnimationsId(Code.Gameplay.Features.Animations.AnimationTypeId newValue) {
         var index = GameComponentsLookup.AnimationsId;
-        var component = (Code.Gameplay.Features.Farmer.AnimationsId)CreateComponent(index, typeof(Code.Gameplay.Features.Farmer.AnimationsId));
+        var component = (Code.Gameplay.Features.Animations.AnimationsId)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.AnimationsId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceAnimationsId(Code.Gameplay.Features.Farmer.AnimationTypeId newValue) {
+    public GameEntity ReplaceAnimationsId(Code.Gameplay.Features.Animations.AnimationTypeId newValue) {
         var index = GameComponentsLookup.AnimationsId;
-        var component = (Code.Gameplay.Features.Farmer.AnimationsId)CreateComponent(index, typeof(Code.Gameplay.Features.Farmer.AnimationsId));
+        var component = (Code.Gameplay.Features.Animations.AnimationsId)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.AnimationsId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

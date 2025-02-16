@@ -1,6 +1,7 @@
 ﻿using Code.Common.Entities;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Services.Identifier;
+using Code.Gameplay.Features.Animations;
 using Code.Infrastructure.Services.AssetProviding;
 using UnityEngine;
 

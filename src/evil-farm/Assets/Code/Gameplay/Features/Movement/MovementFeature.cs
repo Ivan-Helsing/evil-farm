@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.Movement
       Add(systems.Create<CharacterMovingSystem>());
       Add(systems.Create<DestinationRemovingOnReachingPointSystem>());
       Add(systems.Create<DestinationRemovingOnReachingPlotSystem>());
+      
+      Add(systems.Create<WorldPositionUpdatingSystem>());
     }
   }
 }

@@ -1,4 +1,4 @@
-﻿namespace Code.Gameplay.Features.Farmer
+﻿namespace Code.Gameplay.Features.Animations
 {
   public enum AnimationTypeId
   {
