@@ -27,6 +27,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
           farmer.isSowing = true;
           farmer.isChangingAnimationState = true;
+          farmer.isPerformingAction = true;
           
           farmer.isMoving = false;
           farmer.isMovingToSowThePlot = false;

@@ -8,6 +8,8 @@ namespace Code.Gameplay.Features.Farmer
     public FarmerFeature(ISystemFactory systems)
     {
       Add(systems.Create<DirectionProvidedFromDestinationPointSystem>());
+      
+      Add(systems.Create<CompleteSowingSystem>());
     }
   }
 }

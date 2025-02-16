@@ -25,14 +25,11 @@ namespace Code.Gameplay.Features.Plots.Systems
     {
       foreach (GameEntity menu in _plantMenu.GetEntities(_buffer))
       {
-        
-        
-        // send farmer to the plot for sow the grains.  Use TargetId to approach to the particular plot.
-        // after farmer approach to the plot, make an animation for sowing, like cast spell.
-        // then provide all beneath data to plot and window.
-        
         GameEntity plot = _game.GetEntityWithId(menu.ParentId);
 
+        if(plot.hasGrowPlant)
+          return;
+        
         plot.AddGrowPlant(menu.GrowPlant);
         plot.AddGrowingDuration(menu.GrowingDuration);
         plot.AddGrowingTimer(menu.GrowingDuration);

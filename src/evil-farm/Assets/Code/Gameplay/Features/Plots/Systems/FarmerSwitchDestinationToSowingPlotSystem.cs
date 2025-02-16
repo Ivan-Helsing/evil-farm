@@ -26,6 +26,10 @@ namespace Code.Gameplay.Features.Plots.Systems
       foreach (GameEntity plot in _plots.GetEntities(_buffer))
       {
         GameEntity farmer = _game.GetEntityWithId(plot.TargetId);
+        
+        if(farmer.isMovingToSowThePlot) 
+          return;
+        
         farmer.ReplaceDestinationPoint(plot.WorldPosition);
         farmer.isMovingToSowThePlot = true;
         farmer.isMoving = true;
