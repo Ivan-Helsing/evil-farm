@@ -7,6 +7,8 @@ namespace Code.Gameplay.Features.Farmer
   {
     public FarmerFeature(ISystemFactory systems)
     {
+      Add(systems.Create<PlayAnimationSystem>());
+      
       Add(systems.Create<DirectionProvidedFromDestinationPointSystem>());
     }
   }

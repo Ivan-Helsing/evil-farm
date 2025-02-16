@@ -22,42 +22,44 @@ public static class GameComponentsLookup {
     public const int MainCamera = 11;
     public const int Offset = 12;
     public const int RotationAngleX = 13;
-    public const int Farmer = 14;
-    public const int FarmerAnimator = 15;
-    public const int Harvesting = 16;
-    public const int PerformingSow = 17;
-    public const int CursorPosition = 18;
-    public const int DestinationGranted = 19;
-    public const int DestinationPoint = 20;
-    public const int Input = 21;
-    public const int Interacted = 22;
-    public const int ReadyToCleanup = 23;
-    public const int TargetId = 24;
-    public const int WalkablePoint = 25;
-    public const int WalkingProvided = 26;
-    public const int CharacterMover = 27;
-    public const int DestinationRadius = 28;
-    public const int Direction = 29;
-    public const int MovementAvailable = 30;
-    public const int Moving = 31;
-    public const int MovingToSowThePlot = 32;
-    public const int ReadyToAppointDestination = 33;
-    public const int Speed = 34;
-    public const int Arable = 35;
-    public const int GrowingDuration = 36;
-    public const int GrowingTimer = 37;
-    public const int GrowPlant = 38;
-    public const int InteractionProvider = 39;
-    public const int Plot = 40;
-    public const int ReadyToBeSowed = 41;
-    public const int ReadyToHarvest = 42;
-    public const int Sowed = 43;
-    public const int MenuId = 44;
-    public const int ParentId = 45;
-    public const int PlantWindow = 46;
-    public const int WindowId = 47;
+    public const int AnimationsId = 14;
+    public const int ChangingAnimationState = 15;
+    public const int Farmer = 16;
+    public const int FarmerAnimator = 17;
+    public const int Harvesting = 18;
+    public const int PerformingSow = 19;
+    public const int CursorPosition = 20;
+    public const int DestinationGranted = 21;
+    public const int DestinationPoint = 22;
+    public const int Input = 23;
+    public const int Interacted = 24;
+    public const int ReadyToCleanup = 25;
+    public const int TargetId = 26;
+    public const int WalkablePoint = 27;
+    public const int WalkingProvided = 28;
+    public const int CharacterMover = 29;
+    public const int DestinationRadius = 30;
+    public const int Direction = 31;
+    public const int MovementAvailable = 32;
+    public const int Moving = 33;
+    public const int MovingToSowThePlot = 34;
+    public const int ReadyToAppointDestination = 35;
+    public const int Speed = 36;
+    public const int Arable = 37;
+    public const int GrowingDuration = 38;
+    public const int GrowingTimer = 39;
+    public const int GrowPlant = 40;
+    public const int InteractionProvider = 41;
+    public const int Plot = 42;
+    public const int ReadyToBeSowed = 43;
+    public const int ReadyToHarvest = 44;
+    public const int Sowed = 45;
+    public const int MenuId = 46;
+    public const int ParentId = 47;
+    public const int PlantWindow = 48;
+    public const int WindowId = 49;
 
-    public const int TotalComponents = 48;
+    public const int TotalComponents = 50;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -74,6 +76,8 @@ public static class GameComponentsLookup {
         "MainCamera",
         "Offset",
         "RotationAngleX",
+        "AnimationsId",
+        "ChangingAnimationState",
         "Farmer",
         "FarmerAnimator",
         "Harvesting",
@@ -125,6 +129,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cameras.MainCamera),
         typeof(Code.Gameplay.Features.Cameras.Offset),
         typeof(Code.Gameplay.Features.Cameras.RotationAngleX),
+        typeof(Code.Gameplay.Features.Farmer.AnimationsId),
+        typeof(Code.Gameplay.Features.Farmer.ChangingAnimationState),
         typeof(Code.Gameplay.Features.Farmer.Farmer),
         typeof(Code.Gameplay.Features.Farmer.FarmerAnimatorComponent),
         typeof(Code.Gameplay.Features.Farmer.Harvesting),

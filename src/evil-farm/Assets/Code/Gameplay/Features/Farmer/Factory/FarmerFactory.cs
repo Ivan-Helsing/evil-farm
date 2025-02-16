@@ -23,6 +23,7 @@ namespace Code.Gameplay.Features.Farmer.Factory
           .AddWorldPosition(initialPoint)
           
           .AddSpeed(5)
+          .AddAnimationsId(AnimationTypeId.Idle)
           
           .AddTargetId(selfId)
           
