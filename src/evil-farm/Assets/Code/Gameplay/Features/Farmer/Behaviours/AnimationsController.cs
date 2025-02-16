@@ -3,11 +3,16 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Farmer.Behaviours
 {
-  public class FarmerAnimations : MonoBehaviour
+  public class AnimationsController : MonoBehaviour
   {
     [SerializeField] private EntityBehaviour _entityView;
     
-    public void ChangingAnimationState() => 
+    public void ChangingAnimationState()
+    {
+      _entityView.Entity.isCompletedAction = true;
       _entityView.Entity.isChangingAnimationState = true;
+      
+      _entityView.Entity.isPerformingAction = false;
+    }
   }
 }

@@ -15,6 +15,7 @@ namespace Code.Gameplay.Features.Plots.Systems
       _plots = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.Plot,
+          GameMatcher.MenuId,
           GameMatcher.ReadyToCleanup));
     }
 
@@ -24,7 +25,7 @@ namespace Code.Gameplay.Features.Plots.Systems
       {
         GameEntity window = _game.GetEntityWithId(plot.MenuId);
         window.isDestructed = true;
-        
+
         plot.RemoveMenuId();
         plot.isReadyToCleanup = false;
       }
