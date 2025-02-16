@@ -1,6 +1,7 @@
 ﻿using Code.Common.Entities;
 using Code.Common.Extensions;
 using Code.Gameplay.Common.Services.Identifier;
+using Code.Gameplay.Features.Animations;
 using Code.Infrastructure.Services.AssetProviding;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ namespace Code.Gameplay.Features.Farmer.Factory
           .AddWorldPosition(initialPoint)
           
           .AddSpeed(5)
+          .AddAnimationsId(AnimationTypeId.Idle)
           
           .AddTargetId(selfId)
           

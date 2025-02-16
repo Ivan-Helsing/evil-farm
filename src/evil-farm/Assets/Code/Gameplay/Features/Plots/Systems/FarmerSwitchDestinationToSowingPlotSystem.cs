@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Plots.Systems
         GameEntity farmer = _game.GetEntityWithId(plot.TargetId);
         farmer.ReplaceDestinationPoint(plot.WorldPosition);
         farmer.isMovingToSowThePlot = true;
+        farmer.isMoving = true;
         
         plot.isReadyToBeSowed = true;
         plot.isReadyToAppointDestination = false;

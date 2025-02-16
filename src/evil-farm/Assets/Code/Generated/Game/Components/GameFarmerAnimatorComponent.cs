@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Farmer.FarmerAnimatorComponent farmerAnimator { get { return (Code.Gameplay.Features.Farmer.FarmerAnimatorComponent)GetComponent(GameComponentsLookup.FarmerAnimator); } }
+    public Code.Gameplay.Features.Animations.FarmerAnimatorComponent farmerAnimator { get { return (Code.Gameplay.Features.Animations.FarmerAnimatorComponent)GetComponent(GameComponentsLookup.FarmerAnimator); } }
     public Code.Gameplay.Features.Farmer.Behaviours.FarmerAnimator FarmerAnimator { get { return farmerAnimator.Value; } }
     public bool hasFarmerAnimator { get { return HasComponent(GameComponentsLookup.FarmerAnimator); } }
 
     public GameEntity AddFarmerAnimator(Code.Gameplay.Features.Farmer.Behaviours.FarmerAnimator newValue) {
         var index = GameComponentsLookup.FarmerAnimator;
-        var component = (Code.Gameplay.Features.Farmer.FarmerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Farmer.FarmerAnimatorComponent));
+        var component = (Code.Gameplay.Features.Animations.FarmerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.FarmerAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceFarmerAnimator(Code.Gameplay.Features.Farmer.Behaviours.FarmerAnimator newValue) {
         var index = GameComponentsLookup.FarmerAnimator;
-        var component = (Code.Gameplay.Features.Farmer.FarmerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Farmer.FarmerAnimatorComponent));
+        var component = (Code.Gameplay.Features.Animations.FarmerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Animations.FarmerAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

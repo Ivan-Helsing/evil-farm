@@ -18,46 +18,49 @@ public static class GameComponentsLookup {
     public const int OwnerId = 7;
     public const int Transform = 8;
     public const int WorldPosition = 9;
-    public const int Distance = 10;
-    public const int MainCamera = 11;
-    public const int Offset = 12;
-    public const int RotationAngleX = 13;
-    public const int Farmer = 14;
-    public const int FarmerAnimator = 15;
-    public const int Harvesting = 16;
-    public const int PerformingSow = 17;
-    public const int CursorPosition = 18;
-    public const int DestinationGranted = 19;
-    public const int DestinationPoint = 20;
-    public const int Input = 21;
-    public const int Interacted = 22;
-    public const int ReadyToCleanup = 23;
-    public const int TargetId = 24;
-    public const int WalkablePoint = 25;
-    public const int WalkingProvided = 26;
-    public const int CharacterMover = 27;
-    public const int DestinationRadius = 28;
-    public const int Direction = 29;
-    public const int MovementAvailable = 30;
-    public const int Moving = 31;
-    public const int MovingToSowThePlot = 32;
-    public const int ReadyToAppointDestination = 33;
-    public const int Speed = 34;
-    public const int Arable = 35;
-    public const int GrowingDuration = 36;
-    public const int GrowingTimer = 37;
-    public const int GrowPlant = 38;
-    public const int InteractionProvider = 39;
-    public const int Plot = 40;
-    public const int ReadyToBeSowed = 41;
-    public const int ReadyToHarvest = 42;
-    public const int Sowed = 43;
-    public const int MenuId = 44;
-    public const int ParentId = 45;
-    public const int PlantWindow = 46;
-    public const int WindowId = 47;
+    public const int AnimationsId = 10;
+    public const int ChangingAnimationState = 11;
+    public const int FarmerAnimator = 12;
+    public const int ReadyToSwitchAnimation = 13;
+    public const int Distance = 14;
+    public const int MainCamera = 15;
+    public const int Offset = 16;
+    public const int RotationAngleX = 17;
+    public const int Farmer = 18;
+    public const int Harvesting = 19;
+    public const int Sowing = 20;
+    public const int CursorPosition = 21;
+    public const int DestinationGranted = 22;
+    public const int DestinationPoint = 23;
+    public const int Input = 24;
+    public const int Interacted = 25;
+    public const int ReadyToCleanup = 26;
+    public const int TargetId = 27;
+    public const int WalkablePoint = 28;
+    public const int WalkingProvided = 29;
+    public const int CharacterMover = 30;
+    public const int DestinationRadius = 31;
+    public const int Direction = 32;
+    public const int MovementAvailable = 33;
+    public const int Moving = 34;
+    public const int MovingToSowThePlot = 35;
+    public const int ReadyToAppointDestination = 36;
+    public const int Speed = 37;
+    public const int Arable = 38;
+    public const int GrowingDuration = 39;
+    public const int GrowingTimer = 40;
+    public const int GrowPlant = 41;
+    public const int InteractionProvider = 42;
+    public const int Plot = 43;
+    public const int ReadyToBeSowed = 44;
+    public const int ReadyToHarvest = 45;
+    public const int Sowed = 46;
+    public const int MenuId = 47;
+    public const int ParentId = 48;
+    public const int PlantWindow = 49;
+    public const int WindowId = 50;
 
-    public const int TotalComponents = 48;
+    public const int TotalComponents = 51;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -70,14 +73,17 @@ public static class GameComponentsLookup {
         "OwnerId",
         "Transform",
         "WorldPosition",
+        "AnimationsId",
+        "ChangingAnimationState",
+        "FarmerAnimator",
+        "ReadyToSwitchAnimation",
         "Distance",
         "MainCamera",
         "Offset",
         "RotationAngleX",
         "Farmer",
-        "FarmerAnimator",
         "Harvesting",
-        "PerformingSow",
+        "Sowing",
         "CursorPosition",
         "DestinationGranted",
         "DestinationPoint",
@@ -121,14 +127,17 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.OwnerId),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Animations.AnimationsId),
+        typeof(Code.Gameplay.Features.Animations.ChangingAnimationState),
+        typeof(Code.Gameplay.Features.Animations.FarmerAnimatorComponent),
+        typeof(Code.Gameplay.Features.Animations.ReadyToSwitchAnimation),
         typeof(Code.Gameplay.Features.Cameras.Distance),
         typeof(Code.Gameplay.Features.Cameras.MainCamera),
         typeof(Code.Gameplay.Features.Cameras.Offset),
         typeof(Code.Gameplay.Features.Cameras.RotationAngleX),
         typeof(Code.Gameplay.Features.Farmer.Farmer),
-        typeof(Code.Gameplay.Features.Farmer.FarmerAnimatorComponent),
         typeof(Code.Gameplay.Features.Farmer.Harvesting),
-        typeof(Code.Gameplay.Features.Farmer.PerformingSow),
+        typeof(Code.Gameplay.Features.Farmer.Sowing),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.DestinationGranted),
         typeof(Code.Gameplay.Features.Input.DestinationPoint),

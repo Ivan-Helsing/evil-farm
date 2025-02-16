@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPerformingSow;
+    static Entitas.IMatcher<GameEntity> _matcherSowing;
 
-    public static Entitas.IMatcher<GameEntity> PerformingSow {
+    public static Entitas.IMatcher<GameEntity> Sowing {
         get {
-            if (_matcherPerformingSow == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PerformingSow);
+            if (_matcherSowing == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Sowing);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPerformingSow = matcher;
+                _matcherSowing = matcher;
             }
 
-            return _matcherPerformingSow;
+            return _matcherSowing;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Farmer.PerformingSow performingSowComponent = new Code.Gameplay.Features.Farmer.PerformingSow();
+    static readonly Code.Gameplay.Features.Farmer.Sowing sowingComponent = new Code.Gameplay.Features.Farmer.Sowing();
 
-    public bool isPerformingSow {
-        get { return HasComponent(GameComponentsLookup.PerformingSow); }
+    public bool isSowing {
+        get { return HasComponent(GameComponentsLookup.Sowing); }
         set {
-            if (value != isPerformingSow) {
-                var index = GameComponentsLookup.PerformingSow;
+            if (value != isSowing) {
+                var index = GameComponentsLookup.Sowing;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : performingSowComponent;
+                            : sowingComponent;
 
                     AddComponent(index, component);
                 } else {
